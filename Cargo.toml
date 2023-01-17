@@ -5,4 +5,5 @@ edition = "2021"
 authors = ["blueokanna <blueokanna@gmail.com>"]
 repository = "https://github.com/blueokanna/RustGLM.git"
 license = "Apache-2.0"
-description = "High-performance, Reliable Zhipu ChatGLM SDK nat
+description = "High-performance, Reliable Zhipu ChatGLM SDK natural language processing in Rust Language"
+homepage = "https://github.com/blueoka
