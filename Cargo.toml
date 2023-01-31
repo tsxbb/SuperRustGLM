@@ -10,3 +10,7 @@ homepage = "https://github.com/blueokanna/RustGLM"
 readme = "README.md"
 keywords = ["zhipu","chatglm","http","ai","sdk"]
 
+[badges]
+maintenance = { status = "actively-developed" }
+
+[depende
