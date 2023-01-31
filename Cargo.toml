@@ -13,4 +13,8 @@ keywords = ["zhipu","chatglm","http","ai","sdk"]
 [badges]
 maintenance = { status = "actively-developed" }
 
-[depende
+[dependencies]
+toml = "0.8.10"
+chrono = "0.4.33"
+hmac = "0.12.1"
+sha2 = "0.10.8"
