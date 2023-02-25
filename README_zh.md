@@ -132,3 +132,82 @@ system_role = "system"
 temp_float = 0.5
 top_p_float = 0.9
 user_role = "user"
+
+#如果你是使用 0.1.3 的版本，添加下面的这个参数，否则不要添加以下的参数:
+[[chatglm_api_key]]
+api_key = "xxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxx"
+```
+
+<br>
+
+
+## 2. 易于使用的 SDK
+
+### 2.1 调用和使用 Rust Crate.io 库
+>
+> 使用这个 **Rust** 项目调用 **SDK** 的难度较低🤩。下面的示例可以让你输入问题以及关键字，控制台会输出 **ChatGLM** 来回答问题：
+
+🚩**输入关键字： 如果没有其他字符，将切换调用模式**
+
+| 序列号 |   全名    | 关键字 (不限制大小写)                |
+| :-------------: |:-------:|:----------------------------|
+| 1 | 服务器推送事件 | SSE, sse , glm4v            |
+| 2 |  异步请求   | ASYNC, Async, async         |
+| 3 |  同步请求   | SYNC, Sync, sync , cogview3 |
+
+
+**为自己的项目添加主函数的示例:**
+> 这里我们引入一个 ChatGLM 的自定义配置文件。 默认是 **Constants.toml** 配置文件
+
+**RustGLM v0.1.3**
+```
+//默认是使用流式传输调用 （RustGLM v0.1.3）
+
+#[tokio::main]
+async fn main() {
+    let mut rust_glm = RustGLM::RustGLM::new().await;
+    loop {
+        println!("You:");
+        let mut user_in = String::new();
+        io::stdin().read_line(&mut user_in).expect("Failed to read line");
+        rust_glm.set_user_input(user_in.trim().to_string()); // 使用修改后的 RustGLM 实例
+      
+        let ai_response = rust_glm.rust_chat_glm("glm-4","Constants.toml").await; // 调用修改后的 RustGLM 实例的方法
+        println!("Liliya: {}", ai_response);
+
+        if ai_response.is_empty() {
+            break;
+        }
+        println!();
+    }
+}
+```
+
+<br>
+
+**RustGLM v0.1.4**
+```
+//默认是使用流式传输调用 （RustGLM v0.1.4）
+
+#[tokio::main]
+async fn main() {
+    let mut rust_glm = RustGLM::RustGLM::new().await;
+    loop {
+        println!("You:");
+        let mut user_in = String::new();
+        io::stdin().read_line(&mut user_in).expect("Failed to read line");
+        rust_glm.set_user_input(user_in.trim().to_string()); // 使用修改后的 RustGLM 实例
+        let api_key: Option<String> = Some("xxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxx".to_string());
+
+        let ai_response = rust_glm.rust_chat_glm(api_key,"glm-4","Constants.toml").await; // 调用修改后的 RustGLM 实例的方法
+        println!("Liliya: {}", ai_response);
+
+        if ai_response.is_empty() {
+            break;
+        }
+        println!();
+    }
+}
+```
+
+## 3.运行命令解释
