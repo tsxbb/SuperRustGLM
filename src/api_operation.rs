@@ -9,4 +9,6 @@ struct ChatApiConfig {
     api_key: Option<String>,
 }
 
-#[
+#[derive(Serialize, Deserialize, Debug)]
+struct AiConfig {
+    chatglm_api_ke
