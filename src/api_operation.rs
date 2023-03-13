@@ -11,4 +11,7 @@ struct ChatApiConfig {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct AiConfig {
-    chatglm_api_ke
+    chatglm_api_key: Vec<ChatApiConfig>,
+}
+
+pub async fn chatglm_api_read_config(file_path: &str, glm:
