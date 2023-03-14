@@ -14,4 +14,5 @@ struct AiConfig {
     chatglm_api_key: Vec<ChatApiConfig>,
 }
 
-pub async fn chatglm_api_read_config(file_path: &str, glm:
+pub async fn chatglm_api_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>> {
+    let file_content = tokio::fs::re
