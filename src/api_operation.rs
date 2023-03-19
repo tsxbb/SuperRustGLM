@@ -19,4 +19,5 @@ pub async fn chatglm_api_read_config(file_path: &str, glm: &str) -> Result<Strin
     let config: AiConfig = toml::from_str(&file_content)?;
 
     let response = match glm {
-        "chat
+        "chatglm_api_key" => config.chatglm_api_key,
+        _ => return Err("Invalid C
