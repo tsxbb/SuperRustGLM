@@ -20,4 +20,7 @@ pub async fn chatglm_api_read_config(file_path: &str, glm: &str) -> Result<Strin
 
     let response = match glm {
         "chatglm_api_key" => config.chatglm_api_key,
-        _ => return Err("Invalid C
+        _ => return Err("Invalid ChatGLM API".into()),
+    };
+
+    let json_string = serde_json::to_string(&res
