@@ -23,4 +23,10 @@ pub async fn chatglm_api_read_config(file_path: &str, glm: &str) -> Result<Strin
         _ => return Err("Invalid ChatGLM API".into()),
     };
 
-    let json_string = serde_json::to_string(&res
+    let json_string = serde_json::to_string(&response)?;
+
+    Ok(json_string)
+}
+
+pub struct APIKeys {
+    user_id: St
