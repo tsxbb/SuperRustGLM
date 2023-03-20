@@ -29,4 +29,9 @@ pub async fn chatglm_api_read_config(file_path: &str, glm: &str) -> Result<Strin
 }
 
 pub struct APIKeys {
-    user_id: St
+    user_id: String,
+    user_secret: String,
+}
+
+impl APIKeys {
+    fn new(user_id: &str, user_secre
