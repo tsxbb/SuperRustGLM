@@ -34,4 +34,7 @@ pub struct APIKeys {
 }
 
 impl APIKeys {
-    fn new(user_id: &str, user_secre
+    fn new(user_id: &str, user_secret: &str) -> APIKeys {
+        APIKeys {
+            user_id: user_id.to_string(),
+     
