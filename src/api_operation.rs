@@ -37,4 +37,8 @@ impl APIKeys {
     fn new(user_id: &str, user_secret: &str) -> APIKeys {
         APIKeys {
             user_id: user_id.to_string(),
-     
+            user_secret: user_secret.to_string(),
+        }
+    }
+
+    pub fn get_instanc
