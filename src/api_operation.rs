@@ -41,4 +41,5 @@ impl APIKeys {
         }
     }
 
-    pub fn get_instanc
+    pub fn get_instance(api: &str) -> &APIKeys {
+        static INSTANCE: OnceCell<APIKeys> = OnceCell::
