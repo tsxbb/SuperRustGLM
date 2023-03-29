@@ -42,4 +42,7 @@ impl APIKeys {
     }
 
     pub fn get_instance(api: &str) -> &APIKeys {
-        static INSTANCE: OnceCell<APIKeys> = OnceCell::
+        static INSTANCE: OnceCell<APIKeys> = OnceCell::new();
+
+        INSTANCE.get_or_init(|| {
+            let parts: Vec<&str> = 
