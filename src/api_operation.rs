@@ -45,4 +45,6 @@ impl APIKeys {
         static INSTANCE: OnceCell<APIKeys> = OnceCell::new();
 
         INSTANCE.get_or_init(|| {
-            let parts: Vec<&str> = 
+            let parts: Vec<&str> = api.trim().split('.').collect();
+            if parts.len() == 2 {
+   
