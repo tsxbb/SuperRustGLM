@@ -47,4 +47,6 @@ impl APIKeys {
         INSTANCE.get_or_init(|| {
             let parts: Vec<&str> = api.trim().split('.').collect();
             if parts.len() == 2 {
-   
+                APIKeys::new(parts[0], parts[1])
+            } else {
+          
