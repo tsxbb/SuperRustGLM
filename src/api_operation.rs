@@ -54,4 +54,8 @@ impl APIKeys {
         })
     }
 
-    pub fn g
+    pub fn get_user_id(&self) -> &str {
+        &self.user_id
+    }
+
+    pub fn get_use
