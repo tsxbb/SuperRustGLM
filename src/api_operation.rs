@@ -58,4 +58,8 @@ impl APIKeys {
         &self.user_id
     }
 
-    pub fn get_use
+    pub fn get_user_secret(&self) -> &str {
+        &self.user_secret
+    }
+
+    pub async fn load_a
