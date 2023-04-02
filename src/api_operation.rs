@@ -49,4 +49,9 @@ impl APIKeys {
             if parts.len() == 2 {
                 APIKeys::new(parts[0], parts[1])
             } else {
-          
+                panic!("Your API Key is Invalid");
+            }
+        })
+    }
+
+    pub fn g
