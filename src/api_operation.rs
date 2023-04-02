@@ -62,4 +62,5 @@ impl APIKeys {
         &self.user_secret
     }
 
-    pub async fn load_a
+    pub async fn load_api_key(user_config: &str) -> Result<String, Box<dyn Error>> {
+      
