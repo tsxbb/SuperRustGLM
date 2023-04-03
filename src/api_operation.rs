@@ -63,4 +63,4 @@ impl APIKeys {
     }
 
     pub async fn load_api_key(user_config: &str) -> Result<String, Box<dyn Error>> {
-      
+        let json_string = match chatglm_api_read_config(user_config, "chatglm_api
