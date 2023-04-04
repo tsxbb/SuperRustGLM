@@ -65,4 +65,8 @@ impl APIKeys {
     pub async fn load_api_key(user_config: &str) -> Result<String, Box<dyn Error>> {
         let json_string = match chatglm_api_read_config(user_config, "chatglm_api_key").await {
             Ok(final_json_string) => final_json_string,
-            Err(err) => return Err(format!("Error reading config file: {}", err).i
+            Err(err) => return Err(format!("Error reading config file: {}", err).into()),
+        };
+
+        let api_key: Value = serde_json::from_str(&json_string)
+     
