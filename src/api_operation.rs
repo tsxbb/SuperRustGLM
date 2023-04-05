@@ -69,4 +69,6 @@ impl APIKeys {
         };
 
         let api_key: Value = serde_json::from_str(&json_string)
-     
+            .map_err(|err| format!("Failed to parse JSON: {}", err))?;
+
+  
