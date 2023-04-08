@@ -73,4 +73,7 @@ impl APIKeys {
 
         let glm_key = api_key[0]["api_key"]
             .as_str()
-            .ok_or_else(
+            .ok_or_else(|| "Failed to get api_key")?
+            .to_string();
+
+        Ok(glm_
