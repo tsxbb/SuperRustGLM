@@ -76,4 +76,6 @@ impl APIKeys {
             .ok_or_else(|| "Failed to get api_key")?
             .to_string();
 
-        Ok(glm_
+        Ok(glm_key)
+    }
+}
