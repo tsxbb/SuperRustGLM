@@ -6,4 +6,9 @@ use std::path::{Path, PathBuf};
 const HISTORY_FILE: &str = "chatglm_history.json";
 
 pub struct HistoryMessage {
-    history_file_p
+    history_file_path: PathBuf,
+}
+
+impl HistoryMessage {
+    pub fn new() -> Self {
+        let hi
