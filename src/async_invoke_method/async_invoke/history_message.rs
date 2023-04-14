@@ -11,4 +11,5 @@ pub struct HistoryMessage {
 
 impl HistoryMessage {
     pub fn new() -> Self {
-        let hi
+        let history_file_path = PathBuf::from(HISTORY_FILE);
+        Self::create_history_
