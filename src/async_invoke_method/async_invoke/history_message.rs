@@ -14,4 +14,7 @@ impl HistoryMessage {
         let history_file_path = PathBuf::from(HISTORY_FILE);
         Self::create_history_file_if_not_exists(&history_file_path);
 
-        HistoryMessage { history_file_path 
+        HistoryMessage { history_file_path }
+    }
+
+    fn create_history_file_if_not_exists(file_path: &Path) {
