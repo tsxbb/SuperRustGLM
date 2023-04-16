@@ -19,4 +19,6 @@ impl HistoryMessage {
 
     fn create_history_file_if_not_exists(file_path: &Path) {
         if !file_path.exists() {
-            if let Err(err) = File::create(
+            if let Err(err) = File::create(file_path) {
+                eprintln!("Failed to create history file: {}", err);
+         
