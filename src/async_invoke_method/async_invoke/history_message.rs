@@ -21,4 +21,8 @@ impl HistoryMessage {
         if !file_path.exists() {
             if let Err(err) = File::create(file_path) {
                 eprintln!("Failed to create history file: {}", err);
-         
+            }
+        }
+    }
+
+    pub fn add_history_to_file(&self, role: &str, content: &str) -> 
