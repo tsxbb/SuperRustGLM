@@ -32,4 +32,9 @@ impl HistoryMessage {
         });
 
         if let Err(err) = fs::write(&self.history_file_path, format!("{},\n", json)) {
-            eprintln!("Faile
+            eprintln!("Failed to write to history file: {}", err);
+        }
+
+        json.to_string()
+    }
+
