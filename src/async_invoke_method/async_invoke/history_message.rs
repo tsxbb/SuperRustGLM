@@ -28,4 +28,7 @@ impl HistoryMessage {
     pub fn add_history_to_file(&self, role: &str, content: &str) -> String {
         let json = json!({
             "role": role,
-     
+            "content": content,
+        });
+
+        if let Err(err) = fs::writ
