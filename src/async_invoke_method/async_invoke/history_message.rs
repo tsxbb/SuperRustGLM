@@ -31,4 +31,5 @@ impl HistoryMessage {
             "content": content,
         });
 
-        if let Err(err) = fs::writ
+        if let Err(err) = fs::write(&self.history_file_path, format!("{},\n", json)) {
+            eprintln!("Faile
