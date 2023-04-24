@@ -39,4 +39,5 @@ impl HistoryMessage {
     }
 
     pub fn load_history_from_file(&self) -> String {
-        if let Ok(file) 
+        if let Ok(file) = File::open(&self.history_file_path) {
+            let reader = BufReade
