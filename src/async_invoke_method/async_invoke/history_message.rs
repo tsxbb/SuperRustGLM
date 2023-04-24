@@ -38,3 +38,5 @@ impl HistoryMessage {
         json.to_string()
     }
 
+    pub fn load_history_from_file(&self) -> String {
+        if let Ok(file) 
