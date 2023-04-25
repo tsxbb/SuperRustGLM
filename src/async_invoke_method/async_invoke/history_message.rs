@@ -41,4 +41,6 @@ impl HistoryMessage {
     pub fn load_history_from_file(&self) -> String {
         if let Ok(file) = File::open(&self.history_file_path) {
             let reader = BufReader::new(file);
-            reader.lines().filter_map(Result::
+            reader.lines().filter_map(Result::ok).collect::<String>()
+        } else {
+            eprintln!("Failed to open history file fo
