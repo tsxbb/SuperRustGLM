@@ -11,4 +11,6 @@ use serde_json::{json, Value};
 use tokio::time::sleep;
 
 
-#[derive(Ser
+#[derive(Serialize, Deserialize, Debug)]
+struct AiResponse {
+    language_model: Option<Stri
