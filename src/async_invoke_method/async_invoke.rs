@@ -13,4 +13,7 @@ use tokio::time::sleep;
 
 #[derive(Serialize, Deserialize, Debug)]
 struct AiResponse {
-    language_model: Option<Stri
+    language_model: Option<String>,
+    system_role: Option<String>,
+    system_content: Option<String>,
+  
