@@ -16,4 +16,6 @@ struct AiResponse {
     language_model: Option<String>,
     system_role: Option<String>,
     system_content: Option<String>,
-  
+    user_role: Option<String>,
+    assistant_role: Option<String>,
+    max_t
