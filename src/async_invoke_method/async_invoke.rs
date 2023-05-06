@@ -22,3 +22,7 @@ struct AiResponse {
     temp_float: Option<f64>,
     top_p_float: Option<f64>,
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+struct AiConfig {
+    ai_co
