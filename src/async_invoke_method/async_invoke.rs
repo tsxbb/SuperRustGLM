@@ -25,4 +25,5 @@ struct AiResponse {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct AiConfig {
-    ai_co
+    ai_config_glm3: Vec<AiResponse>,
+    ai_config_glm4: Vec<AiResponse>
