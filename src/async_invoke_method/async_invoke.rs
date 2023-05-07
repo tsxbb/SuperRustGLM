@@ -26,4 +26,7 @@ struct AiResponse {
 #[derive(Serialize, Deserialize, Debug)]
 struct AiConfig {
     ai_config_glm3: Vec<AiResponse>,
-    ai_config_glm4: Vec<AiResponse>
+    ai_config_glm4: Vec<AiResponse>,
+}
+
+async fn async_read_config(file_path: &str, glm: &str) -> Result<Stri
