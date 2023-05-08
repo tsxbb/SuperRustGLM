@@ -29,4 +29,5 @@ struct AiConfig {
     ai_config_glm4: Vec<AiResponse>,
 }
 
-async fn async_read_config(file_path: &str, glm: &str) -> Result<Stri
+async fn async_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>> {
+    let file_content = tokio::fs::read_to_string(file_pa
