@@ -30,4 +30,7 @@ struct AiConfig {
 }
 
 async fn async_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>> {
-    let file_content = tokio::fs::read_to_string(file_pa
+    let file_content = tokio::fs::read_to_string(file_path).await?;
+    let config: AiConfig = toml::from_str(&file_content)?;
+
+    let response = mat
