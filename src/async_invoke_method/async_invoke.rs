@@ -35,4 +35,8 @@ async fn async_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn
 
     let response = match glm {
         "glm-3" => config.ai_config_glm3,
-        "glm-4" => config.ai_
+        "glm-4" => config.ai_config_glm4,
+        _ => return Err("Invalid glm4v".into()),
+    };
+
+    let
