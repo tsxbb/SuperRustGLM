@@ -39,4 +39,6 @@ async fn async_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn
         _ => return Err("Invalid glm4v".into()),
     };
 
-    let
+    let json_string = serde_json::to_string(&response)?;
+
+    Ok(j
