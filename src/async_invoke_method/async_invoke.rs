@@ -41,4 +41,8 @@ async fn async_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn
 
     let json_string = serde_json::to_string(&response)?;
 
-    Ok(j
+    Ok(json_string)
+}
+
+pub struct MessageProcessor {
+    messages: hist
