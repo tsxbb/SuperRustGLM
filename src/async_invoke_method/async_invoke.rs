@@ -49,4 +49,6 @@ pub struct MessageProcessor {
 }
 
 impl MessageProcessor {
-    pub fn new
+    pub fn new() -> Self {
+        MessageProcessor {
+            messages: history_message:
