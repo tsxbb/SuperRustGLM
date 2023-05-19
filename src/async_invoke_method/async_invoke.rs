@@ -45,4 +45,8 @@ async fn async_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn
 }
 
 pub struct MessageProcessor {
-    messages: hist
+    messages: history_message::HistoryMessage,
+}
+
+impl MessageProcessor {
+    pub fn new
