@@ -51,4 +51,8 @@ pub struct MessageProcessor {
 impl MessageProcessor {
     pub fn new() -> Self {
         MessageProcessor {
-            messages: history_message:
+            messages: history_message::HistoryMessage::new(),
+        }
+    }
+
+    pub fn set_input_message(&self) -
