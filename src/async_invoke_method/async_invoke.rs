@@ -59,4 +59,9 @@ impl MessageProcessor {
         let message = self.messages.load_history_from_file();
         if !message.is_empty() {
             Some(message)
-        } 
+        } else {
+            None
+        }
+    }
+
+    pub fn last_messages(&self, role: &str, me
