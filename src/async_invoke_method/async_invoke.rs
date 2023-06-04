@@ -68,4 +68,5 @@ impl MessageProcessor {
         let input_message = self.set_input_message().unwrap_or_default();
 
         let mut input: Value = serde_json::from_str(&input_message).unwrap_or_default();
-        input["rol
+        input["role"] = Value::String(role.to_string());
+        input["content"] = Value::String
