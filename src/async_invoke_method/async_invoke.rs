@@ -67,4 +67,5 @@ impl MessageProcessor {
     pub fn last_messages(&self, role: &str, messages: &str) -> String {
         let input_message = self.set_input_message().unwrap_or_default();
 
-        let mut input: Value = serde_jso
+        let mut input: Value = serde_json::from_str(&input_message).unwrap_or_default();
+        input["rol
