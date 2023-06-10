@@ -71,4 +71,6 @@ impl MessageProcessor {
         input["role"] = Value::String(role.to_string());
         input["content"] = Value::String(messages.to_string());
 
-        let texts = serde_json::to_strin
+        let texts = serde_json::to_string(&input).unwrap_or_default();
+
+        let regex = Regex::new(r",(\s*})").ex
