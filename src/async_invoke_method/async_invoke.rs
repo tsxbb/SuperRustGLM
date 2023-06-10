@@ -73,4 +73,6 @@ impl MessageProcessor {
 
         let texts = serde_json::to_string(&input).unwrap_or_default();
 
-        let regex = Regex::new(r",(\s*})").ex
+        let regex = Regex::new(r",(\s*})").expect("Failed to create regex pattern");
+
+        let user_messages = 
