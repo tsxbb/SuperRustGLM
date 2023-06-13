@@ -86,4 +86,9 @@ impl MessageProcessor {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct AsyncInvokeModel {
     get_message: String,
-    se
+    search_task_id: String,
+}
+
+impl AsyncInvokeModel {
+    pub fn new() -> Self {
+        
