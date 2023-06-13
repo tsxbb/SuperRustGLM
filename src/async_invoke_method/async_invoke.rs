@@ -83,4 +83,7 @@ impl MessageProcessor {
 }
 
 
-#[derive(Debug, Serialize, Deser
+#[derive(Debug, Serialize, Deserialize)]
+pub struct AsyncInvokeModel {
+    get_message: String,
+    se
