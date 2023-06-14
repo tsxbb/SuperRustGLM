@@ -93,4 +93,8 @@ impl AsyncInvokeModel {
     pub fn new() -> Self {
         AsyncInvokeModel {
             get_message: String::new(),
-            search_task_i
+            search_task_id: String::new(),
+        }
+    }
+
+    pub async fn async_request(token: String
