@@ -91,4 +91,6 @@ pub struct AsyncInvokeModel {
 
 impl AsyncInvokeModel {
     pub fn new() -> Self {
-        
+        AsyncInvokeModel {
+            get_message: String::new(),
+            search_task_i
