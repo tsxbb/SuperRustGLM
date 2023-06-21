@@ -97,4 +97,4 @@ impl AsyncInvokeModel {
         }
     }
 
-    pub async fn async_request(token: String
+    pub async fn async_request(token: String, input: String, glm_version:&str,user_config: String, default_url: Stri
