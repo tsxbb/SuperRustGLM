@@ -98,4 +98,5 @@ impl AsyncInvokeModel {
     }
 
     pub async fn async_request(token: String, input: String, glm_version:&str,user_config: String, default_url: String, check_url: String) -> Result<String, Box<dyn Error>> {
-        let mut async_in
+        let mut async_invoke_model = Self::new();
+        Self::async_invoke_request_metho
