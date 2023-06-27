@@ -100,4 +100,5 @@ impl AsyncInvokeModel {
     pub async fn async_request(token: String, input: String, glm_version:&str,user_config: String, default_url: String, check_url: String) -> Result<String, Box<dyn Error>> {
         let mut async_invoke_model = Self::new();
         Self::async_invoke_request_method(&mut async_invoke_model, token.clone(), input.clone(), glm_version,user_config.clone(), default_url.clone()).await?;
-        let search_id = a
+        let search_id = async_invoke_model.search_task_id.clone();
+        let response_data = 
