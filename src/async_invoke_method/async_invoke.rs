@@ -106,4 +106,7 @@ impl AsyncInvokeModel {
         Ok(result)
     }
 
-    async fn gene
+    async fn generate_json_request_body(
+        language_model: &str,
+        system_role: &str,
+ 
