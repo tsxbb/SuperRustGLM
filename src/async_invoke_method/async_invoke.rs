@@ -102,4 +102,8 @@ impl AsyncInvokeModel {
         Self::async_invoke_request_method(&mut async_invoke_model, token.clone(), input.clone(), glm_version,user_config.clone(), default_url.clone()).await?;
         let search_id = async_invoke_model.search_task_id.clone();
         let response_data = Self::wait_for_task_to_complete(&*search_id.clone(), &*token.clone(), &*check_url.clone()).await?;
-        let result = async_invoke_model.process_tas
+        let result = async_invoke_model.process_task_status(&response_data, &input);
+        Ok(result)
+    }
+
+    async fn gene
