@@ -115,4 +115,7 @@ impl AsyncInvokeModel {
         max_token: f64,
         temp_float: f64,
         top_p_float: f64,
-   
+    ) -> Result<String, Box<dyn Error>> {
+        let message_process = MessageProcessor::new();
+
+        //
