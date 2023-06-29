@@ -109,4 +109,6 @@ impl AsyncInvokeModel {
     async fn generate_json_request_body(
         language_model: &str,
         system_role: &str,
- 
+        system_content: &str,
+        user_role: &str,
+        user_input: 
