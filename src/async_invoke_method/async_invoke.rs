@@ -118,4 +118,6 @@ impl AsyncInvokeModel {
     ) -> Result<String, Box<dyn Error>> {
         let message_process = MessageProcessor::new();
 
-        //
+        //Debug for reading history from file
+        /*
+        if let Some(input_message)
