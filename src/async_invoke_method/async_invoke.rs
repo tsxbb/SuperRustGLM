@@ -120,4 +120,5 @@ impl AsyncInvokeModel {
 
         //Debug for reading history from file
         /*
-        if let Some(input_message)
+        if let Some(input_message) = message_process.set_input_message() {
+            println!("Loaded history fr
