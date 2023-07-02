@@ -121,4 +121,6 @@ impl AsyncInvokeModel {
         //Debug for reading history from file
         /*
         if let Some(input_message) = message_process.set_input_message() {
-            println!("Loaded history fr
+            println!("Loaded history from file:\n{}", input_message);
+        } else {
+            pri
