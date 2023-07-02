@@ -123,4 +123,8 @@ impl AsyncInvokeModel {
         if let Some(input_message) = message_process.set_input_message() {
             println!("Loaded history from file:\n{}", input_message);
         } else {
-            pri
+            println!("No history available.");
+        }*/
+
+        let messages = json!([
+        {"rol
