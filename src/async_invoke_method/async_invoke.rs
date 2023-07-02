@@ -127,4 +127,5 @@ impl AsyncInvokeModel {
         }*/
 
         let messages = json!([
-        {"rol
+        {"role": system_role, "content": system_content},
+        {"role": user_
