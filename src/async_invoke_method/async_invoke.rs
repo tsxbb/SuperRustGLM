@@ -128,4 +128,5 @@ impl AsyncInvokeModel {
 
         let messages = json!([
         {"role": system_role, "content": system_content},
-        {"role": user_
+        {"role": user_role, "content": message_process.last_messages(user_role,user_input)}
+   
