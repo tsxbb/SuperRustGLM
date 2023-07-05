@@ -135,4 +135,6 @@ impl AsyncInvokeModel {
         "model": language_model,
         "messages": messages,
         "stream": false,
-        "max_tokens":
+        "max_tokens":max_token,
+        "temperature": temp_float,
+        "top_p": top_p_fl
