@@ -137,4 +137,7 @@ impl AsyncInvokeModel {
         "stream": false,
         "max_tokens":max_token,
         "temperature": temp_float,
-        "top_p": top_p_fl
+        "top_p": top_p_float
+    });
+
+        let json_string = serde_json::to_string(&json_request
