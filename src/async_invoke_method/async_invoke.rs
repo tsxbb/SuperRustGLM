@@ -132,4 +132,7 @@ impl AsyncInvokeModel {
     ]);
 
         let json_request_body = json!({
-        "model": language_mo
+        "model": language_model,
+        "messages": messages,
+        "stream": false,
+        "max_tokens":
