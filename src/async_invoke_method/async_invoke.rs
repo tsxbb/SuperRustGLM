@@ -148,4 +148,9 @@ impl AsyncInvokeModel {
         // 打印生成的 JSON 字符串
         //println!("{:#}", result.trim());
 
-        Ok
+        Ok(result)
+    }
+
+    pub async fn async_invoke_request_method(
+        &mut self,
+        token
