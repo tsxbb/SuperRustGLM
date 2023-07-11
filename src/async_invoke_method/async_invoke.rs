@@ -156,4 +156,6 @@ impl AsyncInvokeModel {
         token: String,
         user_input: String,
         glm_version: &str,
-        user_config
+        user_config: String,
+        default_url: String,
+    ) -> Result<String, Stri
