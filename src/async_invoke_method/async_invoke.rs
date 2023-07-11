@@ -153,4 +153,7 @@ impl AsyncInvokeModel {
 
     pub async fn async_invoke_request_method(
         &mut self,
-        token
+        token: String,
+        user_input: String,
+        glm_version: &str,
+        user_config
