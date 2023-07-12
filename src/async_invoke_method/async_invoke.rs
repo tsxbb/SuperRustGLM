@@ -162,4 +162,6 @@ impl AsyncInvokeModel {
         let json_string = match async_read_config(user_config.as_str(), glm_version).await {
             Ok(json_string) => json_string,
             Err(err) => return Err(format!("Error reading config file: {}", err)),
-       
+        };
+
+        let json_value: Value = serde_json::from_str(&json_string)
