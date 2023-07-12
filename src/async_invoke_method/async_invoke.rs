@@ -159,4 +159,6 @@ impl AsyncInvokeModel {
         user_config: String,
         default_url: String,
     ) -> Result<String, String> {
-        let json_string = match async_read_config(user_config.as_st
+        let json_string = match async_read_config(user_config.as_str(), glm_version).await {
+            Ok(json_string) => json_string,
+         
