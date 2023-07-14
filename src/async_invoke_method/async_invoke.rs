@@ -167,4 +167,5 @@ impl AsyncInvokeModel {
         let json_value: Value = serde_json::from_str(&json_string)
             .expect("Failed to parse Toml to JSON");
 
-        let language_model = json_va
+        let language_model = json_value[0]["language_model"]
+            .as_str().expect("Failed to get language
