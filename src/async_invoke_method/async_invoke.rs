@@ -168,4 +168,7 @@ impl AsyncInvokeModel {
             .expect("Failed to parse Toml to JSON");
 
         let language_model = json_value[0]["language_model"]
-            .as_str().expect("Failed to get language
+            .as_str().expect("Failed to get language_model").to_string();
+
+        let system_role = json_value[0]["system_role"]
+   
