@@ -171,4 +171,6 @@ impl AsyncInvokeModel {
             .as_str().expect("Failed to get language_model").to_string();
 
         let system_role = json_value[0]["system_role"]
-   
+            .as_str().expect("Failed to get system_role").to_string();
+
+      
