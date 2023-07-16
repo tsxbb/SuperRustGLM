@@ -176,4 +176,5 @@ impl AsyncInvokeModel {
         let system_content = json_value[0]["system_content"]
             .as_str().expect("Failed to get system_content").to_string().trim().to_string();
 
-        let user_role
+        let user_role = json_value[0]["user_role"]
+            .as_str().expect("Failed to get us
