@@ -177,4 +177,7 @@ impl AsyncInvokeModel {
             .as_str().expect("Failed to get system_content").to_string().trim().to_string();
 
         let user_role = json_value[0]["user_role"]
-            .as_str().expect("Failed to get us
+            .as_str().expect("Failed to get user_role").to_string();
+
+        let max_token = json_value[0]["max_tokens"]
+  
