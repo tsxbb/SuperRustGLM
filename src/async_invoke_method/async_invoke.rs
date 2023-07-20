@@ -180,4 +180,6 @@ impl AsyncInvokeModel {
             .as_str().expect("Failed to get user_role").to_string();
 
         let max_token = json_value[0]["max_tokens"]
-  
+            .as_f64().expect("Failed to get max_token");
+
+        let temp_float
