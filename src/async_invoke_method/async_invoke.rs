@@ -182,4 +182,5 @@ impl AsyncInvokeModel {
         let max_token = json_value[0]["max_tokens"]
             .as_f64().expect("Failed to get max_token");
 
-        let temp_float
+        let temp_float = json_value[0]["temp_float"]
+            .as_f64().expect("Failed to get t
