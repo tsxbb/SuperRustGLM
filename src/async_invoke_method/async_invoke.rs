@@ -188,4 +188,8 @@ impl AsyncInvokeModel {
         let top_p_float = json_value[0]["top_p_float"]
             .as_f64().expect("Failed to get top_p_float");
 
-        let user_json_c
+        let user_json_content = match Self::generate_json_request_body(
+            &language_model,
+            &system_role,
+            &system_content,
+            &use
