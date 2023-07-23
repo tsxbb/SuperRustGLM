@@ -192,4 +192,7 @@ impl AsyncInvokeModel {
             &language_model,
             &system_role,
             &system_content,
-            &use
+            &user_role,
+            &user_input,
+            max_token,
+            temp_float,
