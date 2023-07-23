@@ -196,3 +196,6 @@ impl AsyncInvokeModel {
             &user_input,
             max_token,
             temp_float,
+            top_p_float,
+        ).await {
+            Ok(result) => r
