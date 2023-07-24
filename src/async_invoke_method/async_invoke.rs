@@ -200,3 +200,8 @@ impl AsyncInvokeModel {
         ).await {
             Ok(result) => result.to_string(),
             Err(err) => return Err(err.to_string()),
+        };
+
+        //println!("Async Calling Now!");
+
+     
