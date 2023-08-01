@@ -208,4 +208,5 @@ impl AsyncInvokeModel {
 
         let request_result = reqwest::Client::new()
             .post(&default_url)
-            .header("Accept", "application/json
+            .header("Accept", "application/json")
+            .header("Content-Type", "application/json;charset=UTF-
