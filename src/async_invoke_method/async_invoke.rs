@@ -211,4 +211,7 @@ impl AsyncInvokeModel {
             .header("Accept", "application/json")
             .header("Content-Type", "application/json;charset=UTF-8")
             .header("Authorization", format!("Bearer {}", token))
-            .body(u
+            .body(user_json_content)
+            .send()
+            .await
+            .map_err(|err|
