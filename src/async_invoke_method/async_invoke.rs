@@ -214,4 +214,7 @@ impl AsyncInvokeModel {
             .body(user_json_content)
             .send()
             .await
-            .map_err(|err|
+            .map_err(|err| format!("HTTP request failure: {}", err));
+
+        let request = match request_result {
+   
