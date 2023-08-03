@@ -217,4 +217,6 @@ impl AsyncInvokeModel {
             .map_err(|err| format!("HTTP request failure: {}", err));
 
         let request = match request_result {
+            Ok(result) => result,
+            Err(err) => return Err(err),
    
