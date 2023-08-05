@@ -219,4 +219,6 @@ impl AsyncInvokeModel {
         let request = match request_result {
             Ok(result) => result,
             Err(err) => return Err(err),
-   
+        };
+
+        //println!("Request Body: {}", json_request_body.
