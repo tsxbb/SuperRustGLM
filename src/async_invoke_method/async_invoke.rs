@@ -223,4 +223,7 @@ impl AsyncInvokeModel {
 
         //println!("Request Body: {}", json_request_body.clone()); //debug
         //println!("default_url is {}",default_url.clone());
-        //println!("Request data: {:?}", reques
+        //println!("Request data: {:?}", request); //debug
+
+        let status = request.status();
+        let response_text =
