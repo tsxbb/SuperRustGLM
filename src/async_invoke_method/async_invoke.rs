@@ -226,4 +226,4 @@ impl AsyncInvokeModel {
         //println!("Request data: {:?}", request); //debug
 
         let status = request.status();
-        let response_text =
+        let response_text = request.text().await.map_err(|err| format!("Failed to read response text: {}", e
