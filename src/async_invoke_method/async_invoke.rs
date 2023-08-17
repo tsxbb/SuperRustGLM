@@ -230,4 +230,6 @@ impl AsyncInvokeModel {
 
         if status.is_success() {
             self.search_task_id = AsyncInvokeModel::new().process_response_data(&response_text);
-            Ok(response_tex
+            Ok(response_text)
+        } else {
+            let error_response: serde_json::Value = serde_
