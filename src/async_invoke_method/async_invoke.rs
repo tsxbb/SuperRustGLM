@@ -229,4 +229,5 @@ impl AsyncInvokeModel {
         let response_text = request.text().await.map_err(|err| format!("Failed to read response text: {}", err))?;
 
         if status.is_success() {
-            self.search_task_id = AsyncInvokeMode
+            self.search_task_id = AsyncInvokeModel::new().process_response_data(&response_text);
+            Ok(response_tex
