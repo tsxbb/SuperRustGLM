@@ -236,4 +236,7 @@ impl AsyncInvokeModel {
 
             if let (Some(id), Some(task_status)) = (
                 error_response.get("id").and_then(|id| id.as_i64()),
-                error_response.get("task_status").and_then(|status| 
+                error_response.get("task_status").and_then(|status| status.as_str()),
+            ) {
+                Err(format!(
+                    "
