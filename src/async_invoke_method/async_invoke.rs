@@ -234,4 +234,5 @@ impl AsyncInvokeModel {
         } else {
             let error_response: serde_json::Value = serde_json::from_str(&response_text).unwrap();
 
-            if let (Some(id), Some(task_st
+            if let (Some(id), Some(task_status)) = (
+                error_response.get("id").and_then(|id| id.as_i6
