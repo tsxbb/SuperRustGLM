@@ -239,4 +239,5 @@ impl AsyncInvokeModel {
                 error_response.get("task_status").and_then(|status| status.as_str()),
             ) {
                 Err(format!(
-                    "
+                    "HTTP request failure, Your request id is: {}, Status: {}",
+                   
