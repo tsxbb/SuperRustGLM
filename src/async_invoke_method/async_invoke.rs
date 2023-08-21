@@ -243,4 +243,6 @@ impl AsyncInvokeModel {
                     id, task_status
                 ))
             } else {
-                Err(forma
+                Err(format!("HTTP request failure, Code: {}", status))
+            }
+   
