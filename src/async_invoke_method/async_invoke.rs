@@ -245,4 +245,6 @@ impl AsyncInvokeModel {
             } else {
                 Err(format!("HTTP request failure, Code: {}", status))
             }
-   
+        }
+    }
+    fn process_response_data(&mut self, response_data: &str) -> String 
