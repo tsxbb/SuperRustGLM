@@ -247,4 +247,5 @@ impl AsyncInvokeModel {
             }
         }
     }
-    fn process_response_data(&mut self, response_data: &str) -> String 
+    fn process_response_data(&mut self, response_data: &str) -> String {
+        if let Ok(json_response) = serde_json::from_str::<Value>(response_dat
