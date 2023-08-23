@@ -248,4 +248,5 @@ impl AsyncInvokeModel {
         }
     }
     fn process_response_data(&mut self, response_data: &str) -> String {
-        if let Ok(json_response) = serde_json::from_str::<Value>(response_dat
+        if let Ok(json_response) = serde_json::from_str::<Value>(response_data) {
+            if let Some(task_id) = json_response.get("id").and
