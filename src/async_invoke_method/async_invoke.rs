@@ -251,4 +251,7 @@ impl AsyncInvokeModel {
         if let Ok(json_response) = serde_json::from_str::<Value>(response_data) {
             if let Some(task_id) = json_response.get("id").and_then(Value::as_str) {
                 self.search_task_id = task_id.replace("\"", "").replace("\\n\\n", "\n");
-                //println!("id is {}"
+                //println!("id is {}",self.search_task_id);
+                return self.search_task_id.clone();
+            }
+    
