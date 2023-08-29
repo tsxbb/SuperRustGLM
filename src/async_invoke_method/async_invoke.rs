@@ -254,4 +254,7 @@ impl AsyncInvokeModel {
                 //println!("id is {}",self.search_task_id);
                 return self.search_task_id.clone();
             }
-    
+        }
+        String::new()
+    }
+    async fn async_invoke_get_method(
