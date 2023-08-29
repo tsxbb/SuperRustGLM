@@ -257,4 +257,4 @@ impl AsyncInvokeModel {
         }
         String::new()
     }
-    async fn async_invoke_get_method(
+    async fn async_invoke_get_method(search_id: &str, token: &str, check_url: &str) -> Result<String, Strin
