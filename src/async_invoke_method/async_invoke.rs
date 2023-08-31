@@ -260,4 +260,6 @@ impl AsyncInvokeModel {
     async fn async_invoke_get_method(search_id: &str, token: &str, check_url: &str) -> Result<String, String> {
         let response = reqwest::Client::new()
             .get(&(check_url.to_string() + &*search_id))
-            .header("Accept", "application
+            .header("Accept", "application/json")
+            .header("Content-Type", "application/json;charset=UTF-8")
+    
