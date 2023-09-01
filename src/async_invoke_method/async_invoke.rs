@@ -265,4 +265,6 @@ impl AsyncInvokeModel {
             .header("Authorization", format!("Bearer {}", token))
             .send()
             .await
-            .map_err(|err| format!("HTTP request fa
+            .map_err(|err| format!("HTTP request failure: {:?}", err))?;
+
+        //println!("Check Url is {}",&(che
