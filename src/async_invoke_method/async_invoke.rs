@@ -263,4 +263,6 @@ impl AsyncInvokeModel {
             .header("Accept", "application/json")
             .header("Content-Type", "application/json;charset=UTF-8")
             .header("Authorization", format!("Bearer {}", token))
-            .sen
+            .send()
+            .await
+            .map_err(|err| format!("HTTP request fa
