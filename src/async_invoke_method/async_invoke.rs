@@ -270,4 +270,6 @@ impl AsyncInvokeModel {
         //println!("Check Url is {}",&(check_url.to_string() + &*search_id));
 
         if response.status().is_success() {
-            Ok(r
+            Ok(response.text().await.unwrap())
+        } else {
+            Err(format!("HTTP r
