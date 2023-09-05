@@ -267,4 +267,7 @@ impl AsyncInvokeModel {
             .await
             .map_err(|err| format!("HTTP request failure: {:?}", err))?;
 
-        //println!("Check Url is {}",&(che
+        //println!("Check Url is {}",&(check_url.to_string() + &*search_id));
+
+        if response.status().is_success() {
+            Ok(r
