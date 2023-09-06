@@ -278,4 +278,5 @@ impl AsyncInvokeModel {
 
     async fn wait_for_task_to_complete(task_id: &str, token: &str, check_url: &str) -> Result<String, String> {
         loop {
-            let task_status = 
+            let task_status = Self::async_invoke_get_method(task_id, token, check_url).await?;
+         
