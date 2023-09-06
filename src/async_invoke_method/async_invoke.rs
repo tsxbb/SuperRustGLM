@@ -276,4 +276,6 @@ impl AsyncInvokeModel {
         }
     }
 
-    async fn wait_for_task_to_complete(task_id: &str, token: &str, check_url: &str
+    async fn wait_for_task_to_complete(task_id: &str, token: &str, check_url: &str) -> Result<String, String> {
+        loop {
+            let task_status = 
