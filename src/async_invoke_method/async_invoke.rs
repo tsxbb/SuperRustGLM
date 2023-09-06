@@ -276,4 +276,4 @@ impl AsyncInvokeModel {
         }
     }
 
-    async 
+    async fn wait_for_task_to_complete(task_id: &str, token: &str, check_url: &str
