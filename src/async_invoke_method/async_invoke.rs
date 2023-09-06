@@ -272,4 +272,8 @@ impl AsyncInvokeModel {
         if response.status().is_success() {
             Ok(response.text().await.unwrap())
         } else {
-            Err(format!("HTTP r
+            Err(format!("HTTP request failure, Code: {}", response.status()))
+        }
+    }
+
+    async 
