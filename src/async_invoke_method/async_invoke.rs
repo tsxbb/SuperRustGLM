@@ -280,4 +280,6 @@ impl AsyncInvokeModel {
         loop {
             let task_status = Self::async_invoke_get_method(task_id, token, check_url).await?;
             if Self::is_task_complete(&task_status).await {
-                retur
+                return Ok(task_status);
+            }
+            sleep(Duration::from_milli
