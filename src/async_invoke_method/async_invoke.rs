@@ -282,4 +282,8 @@ impl AsyncInvokeModel {
             if Self::is_task_complete(&task_status).await {
                 return Ok(task_status);
             }
-            sleep(Duration::from_milli
+            sleep(Duration::from_millis(100)).await;
+        }
+    }
+
+    async fn is_task_complete(task_status: &str) -> bool {
