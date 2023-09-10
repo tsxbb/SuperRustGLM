@@ -287,3 +287,4 @@ impl AsyncInvokeModel {
     }
 
     async fn is_task_complete(task_status: &str) -> bool {
+        let task_status_json: serde_json::Value = serde_json::from_str
