@@ -290,4 +290,9 @@ impl AsyncInvokeModel {
         let task_status_json: serde_json::Value = serde_json::from_str(task_status).unwrap();
 
         if let Some(status) = task_status_json.get("task_status").and_then(|s| s.as_str()) {
-            return status.eq_ig
+            return status.eq_ignore_ascii_case("SUCCESS");
+        }
+        false
+    }
+
+    fn process_
