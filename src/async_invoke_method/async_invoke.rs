@@ -295,4 +295,5 @@ impl AsyncInvokeModel {
         false
     }
 
-    fn process_
+    fn process_task_status(&mut self, response_data: &str, user_input: &str) -> String {
+      
