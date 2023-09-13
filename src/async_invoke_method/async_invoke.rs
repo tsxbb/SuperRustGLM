@@ -296,4 +296,6 @@ impl AsyncInvokeModel {
     }
 
     fn process_task_status(&mut self, response_data: &str, user_input: &str) -> String {
-        let result = serde_json::from_str::<serde_json::Value>(response_da
+        let result = serde_json::from_str::<serde_json::Value>(response_data)
+            .map_err(|e| format!("Error processing response data: {}", e))
+            .and_t
