@@ -300,4 +300,5 @@ impl AsyncInvokeModel {
             .map_err(|e| format!("Error processing response data: {}", e))
             .and_then(|json_response| {
                 if let Some(choices) = json_response.get("choices").and_then(|c| c.as_array()) {
-                    if 
+                    if let Some(choice) = choices.get(0).and_then(|c| c.as_object()) {
+         
