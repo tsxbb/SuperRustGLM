@@ -302,4 +302,5 @@ impl AsyncInvokeModel {
                 if let Some(choices) = json_response.get("choices").and_then(|c| c.as_array()) {
                     if let Some(choice) = choices.get(0).and_then(|c| c.as_object()) {
                         if let Some(message) = choice.get("message").and_then(|m| m.as_object()) {
-                            if let Some(content) = message.get("conte
+                            if let Some(content) = message.get("content").and_then(|c| c.as_str()) {
+                                Ok(
