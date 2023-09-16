@@ -305,4 +305,5 @@ impl AsyncInvokeModel {
                             if let Some(content) = message.get("content").and_then(|c| c.as_str()) {
                                 Ok(content.to_string())
                             } else {
-                        
+                                Err("Content not found in message".to_string())
+                            }
