@@ -307,3 +307,5 @@ impl AsyncInvokeModel {
                             } else {
                                 Err("Content not found in message".to_string())
                             }
+                        } else {
+                            Err("
