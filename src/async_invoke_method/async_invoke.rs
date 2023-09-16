@@ -303,4 +303,6 @@ impl AsyncInvokeModel {
                     if let Some(choice) = choices.get(0).and_then(|c| c.as_object()) {
                         if let Some(message) = choice.get("message").and_then(|m| m.as_object()) {
                             if let Some(content) = message.get("content").and_then(|c| c.as_str()) {
-                                Ok(
+                                Ok(content.to_string())
+                            } else {
+                        
