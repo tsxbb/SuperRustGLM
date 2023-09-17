@@ -308,4 +308,6 @@ impl AsyncInvokeModel {
                                 Err("Content not found in message".to_string())
                             }
                         } else {
-                            Err("
+                            Err("Message not found in choice".to_string())
+                        }
+      
