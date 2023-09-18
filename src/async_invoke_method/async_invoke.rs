@@ -311,4 +311,7 @@ impl AsyncInvokeModel {
                             Err("Message not found in choice".to_string())
                         }
                     } else {
-                        Err("Choice not found in choices
+                        Err("Choice not found in choices".to_string())
+                    }
+                } else {
+                    Err("Choices
