@@ -316,4 +316,8 @@ impl AsyncInvokeModel {
                 } else {
                     Err("Choices not found in response".to_string())
                 }
-            })
+            });
+
+        match result {
+            Ok(content) => {
+                s
