@@ -320,4 +320,5 @@ impl AsyncInvokeModel {
 
         match result {
             Ok(content) => {
-                s
+                self.get_message = self.convert_unicode_emojis(&content);
+                self.get_mes
