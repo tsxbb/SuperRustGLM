@@ -322,4 +322,5 @@ impl AsyncInvokeModel {
             Ok(content) => {
                 self.get_message = self.convert_unicode_emojis(&content);
                 self.get_message = self.get_message.replace("\"", "")
-                    .rep
+                    .replace("\\n\\n", "\n")
+                    .replace("\\nn\\nn", "\n")
