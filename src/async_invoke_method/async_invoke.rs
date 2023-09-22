@@ -324,3 +324,5 @@ impl AsyncInvokeModel {
                 self.get_message = self.get_message.replace("\"", "")
                     .replace("\\n\\n", "\n")
                     .replace("\\nn\\nn", "\n")
+                    .replace("\\\\nn", "\n")
+                    .replace("\\n", "
