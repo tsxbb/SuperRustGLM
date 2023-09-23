@@ -325,4 +325,6 @@ impl AsyncInvokeModel {
                     .replace("\\n\\n", "\n")
                     .replace("\\nn\\nn", "\n")
                     .replace("\\\\nn", "\n")
-                    .replace("\\n", "
+                    .replace("\\n", "\n")
+                    .replace("\\nn", "\n")
+                    .repl
