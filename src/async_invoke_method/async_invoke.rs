@@ -327,4 +327,7 @@ impl AsyncInvokeModel {
                     .replace("\\\\nn", "\n")
                     .replace("\\n", "\n")
                     .replace("\\nn", "\n")
-                    .repl
+                    .replace("\\\\", "")
+                    .replace("\\\\", "");
+
+                //self.get_mess
