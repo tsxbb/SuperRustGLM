@@ -333,4 +333,5 @@ impl AsyncInvokeModel {
                 //self.get_message.(USER_ROLE, );
                 //self.get_message.add_history_to_file(ASSISTANT_ROLE, &self.get_message);
                 let message_process = history_message::HistoryMessage::new();
-                message_process.add_histor
+                message_process.add_history_to_file("user", user_input);
+                message_process.add_h
