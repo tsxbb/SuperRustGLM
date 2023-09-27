@@ -336,4 +336,7 @@ impl AsyncInvokeModel {
                 message_process.add_history_to_file("user", user_input);
                 message_process.add_history_to_file("assistant", &*self.get_message);
 
-                self.get_message.cl
+                self.get_message.clone()
+            }
+            Err(e) => {
+                ep
