@@ -339,4 +339,10 @@ impl AsyncInvokeModel {
                 self.get_message.clone()
             }
             Err(e) => {
-                ep
+                eprintln!("{}", e);
+                String::new()
+            }
+        }
+    }
+
+    fn 
