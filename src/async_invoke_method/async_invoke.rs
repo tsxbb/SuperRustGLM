@@ -345,4 +345,5 @@ impl AsyncInvokeModel {
         }
     }
 
-    fn 
+    fn convert_unicode_emojis(&self, input: &str) -> String {
+        let regex = regex:
