@@ -347,4 +347,5 @@ impl AsyncInvokeModel {
 
     fn convert_unicode_emojis(&self, input: &str) -> String {
         let regex = regex::Regex::new(r"\\u[0-9a-fA-F]{4}").unwrap();
-        let result = regex.replace_al
+        let result = regex.replace_all(input, |caps: &regex::Captures| {
+            let emoji = char::fr
