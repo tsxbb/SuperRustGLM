@@ -351,4 +351,7 @@ impl AsyncInvokeModel {
             let emoji = char::from_u32(
                 u32::from_str_radix(&caps[0][2..], 16).expect("Failed to parse Unicode escape"),
             )
-                .expect("
+                .expect("Invalid Unicode escape");
+            emoji.to_string()
+        });
+  
