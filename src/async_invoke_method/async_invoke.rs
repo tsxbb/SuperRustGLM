@@ -354,4 +354,6 @@ impl AsyncInvokeModel {
                 .expect("Invalid Unicode escape");
             emoji.to_string()
         });
-  
+        result.to_string()
+    }
+}
