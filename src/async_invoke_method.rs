@@ -9,4 +9,5 @@ pub struct ReceiveAsyncInvokeOnlyText {
 }
 
 impl ReceiveAsyncInvokeOnlyText {
-    pub async fn new(token: &str, message: &str, glm_version:&str, user_config: String)
+    pub async fn new(token: &str, message: &str, glm_version:&str, user_config: String) -> Self {
+        let default_url = "https://open.bigmodel.cn/api/paas/
