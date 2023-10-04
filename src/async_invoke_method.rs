@@ -9,4 +9,4 @@ pub struct ReceiveAsyncInvokeOnlyText {
 }
 
 impl ReceiveAsyncInvokeOnlyText {
-    pu
+    pub async fn new(token: &str, message: &str, glm_version:&str, user_config: String)
