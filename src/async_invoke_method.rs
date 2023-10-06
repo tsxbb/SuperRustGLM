@@ -13,4 +13,7 @@ impl ReceiveAsyncInvokeOnlyText {
         let default_url = "https://open.bigmodel.cn/api/paas/v4/async/chat/completions".to_string();
         let async_invoke_check_url = "https://open.bigmodel.cn/api/paas/v4/async-result/".to_string();
 
-        let mut instance = S
+        let mut instance = Self {
+            response_async_message: None,
+            default_url,
+ 
