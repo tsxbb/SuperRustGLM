@@ -19,4 +19,5 @@ impl ReceiveAsyncInvokeOnlyText {
             async_invoke_check_url,
         };
 
-        instance.se
+        instance.send_request_and_wait(token, message, glm_version, user_config).await;
+     
