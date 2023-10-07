@@ -16,4 +16,7 @@ impl ReceiveAsyncInvokeOnlyText {
         let mut instance = Self {
             response_async_message: None,
             default_url,
- 
+            async_invoke_check_url,
+        };
+
+        instance.se
