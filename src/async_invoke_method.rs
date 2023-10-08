@@ -20,4 +20,7 @@ impl ReceiveAsyncInvokeOnlyText {
         };
 
         instance.send_request_and_wait(token, message, glm_version, user_config).await;
-     
+        instance
+    }
+
+    pub async fn send_request_and_wait(&mut self, tok
