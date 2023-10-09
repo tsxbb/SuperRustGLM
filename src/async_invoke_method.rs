@@ -25,4 +25,6 @@ impl ReceiveAsyncInvokeOnlyText {
 
     pub async fn send_request_and_wait(&mut self, token: &str, message: &str, glm_version:&str, user_config: String) {
         let default_url = self.default_url.clone();
-        let async_invoke_check_url 
+        let async_invoke_check_url = self.async_invoke_check_url.clone();
+
+        let result = AsyncInvo
