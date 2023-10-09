@@ -23,4 +23,5 @@ impl ReceiveAsyncInvokeOnlyText {
         instance
     }
 
-    pub async fn send_request_and_wait(&mut self, tok
+    pub async fn send_request_and_wait(&mut self, token: &str, message: &str, glm_version:&str, user_config: String) {
+      
