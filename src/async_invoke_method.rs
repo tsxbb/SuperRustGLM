@@ -27,4 +27,8 @@ impl ReceiveAsyncInvokeOnlyText {
         let default_url = self.default_url.clone();
         let async_invoke_check_url = self.async_invoke_check_url.clone();
 
-        let result = AsyncInvokeModel::async_request(token.parse().unwrap(), message.parse().unwrap(), glm_version, user_config, default_url, async_invoke_check_url).awai
+        let result = AsyncInvokeModel::async_request(token.parse().unwrap(), message.parse().unwrap(), glm_version, user_config, default_url, async_invoke_check_url).await;
+
+        match result {
+            Ok(response) => {
+                self.respon
