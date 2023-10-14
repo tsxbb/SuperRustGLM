@@ -36,4 +36,8 @@ impl ReceiveAsyncInvokeOnlyText {
             Err(err) => {
                 eprintln!("Error: {}", err);
             }
-  
+        }
+    }
+
+    pub fn get_response(&self) -> Option<&str> {
+        sel
