@@ -40,4 +40,6 @@ impl ReceiveAsyncInvokeOnlyText {
     }
 
     pub fn get_response(&self) -> Option<&str> {
-        sel
+        self.response_async_message.as_deref()
+    }
+}
