@@ -31,4 +31,6 @@ impl ReceiveAsyncInvokeOnlyText {
 
         match result {
             Ok(response) => {
-                self.respon
+                self.response_async_message = Some(response);
+            }
+            Err(err) =
