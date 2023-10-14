@@ -33,4 +33,7 @@ impl ReceiveAsyncInvokeOnlyText {
             Ok(response) => {
                 self.response_async_message = Some(response);
             }
-            Err(err) =
+            Err(err) => {
+                eprintln!("Error: {}", err);
+            }
+  
