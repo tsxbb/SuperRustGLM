@@ -6,4 +6,6 @@ pub fn time_sync() -> i64 {
     let result = client.synchronize("ntp.aliyun.com").unwrap();
 
     let local_time: DateTime<Local> =
-        DateTime::from(r
+        DateTime::from(result.datetime().into_chrono_datetime().unwrap());
+
+    let milliseconds = local_t
