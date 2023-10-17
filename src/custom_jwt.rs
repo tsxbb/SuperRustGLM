@@ -10,4 +10,6 @@ pub struct CustomJwt {
     payload: String,
 }
 
-impl Custo
+impl CustomJwt {
+    pub fn new(user_id: &str, user_secret: &str) -> CustomJwt {
+   
