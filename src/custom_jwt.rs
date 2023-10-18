@@ -12,4 +12,5 @@ pub struct CustomJwt {
 
 impl CustomJwt {
     pub fn new(user_id: &str, user_secret: &str) -> CustomJwt {
-        let header = "{\"alg\":\"HS256\",\"sign_type\":\"SIGN\"}".to
+        let header = "{\"alg\":\"HS256\",\"sign_type\":\"SIGN\"}".to_string();
+        let payload = CustomJwt::jwt_payload(use
