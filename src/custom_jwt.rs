@@ -16,4 +16,9 @@ impl CustomJwt {
         let payload = CustomJwt::jwt_payload(user_id);
         CustomJwt {
             secret: user_secret.to_string(),
-  
+            header,
+            payload,
+        }
+    }
+
+    pub fn create_jwt(&self) -> St
