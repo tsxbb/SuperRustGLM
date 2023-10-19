@@ -21,4 +21,5 @@ impl CustomJwt {
         }
     }
 
-    pub fn create_jwt(&self) -> St
+    pub fn create_jwt(&self) -> String {
+        let encoded_header = CustomJwt::encode_base64_url(self.head
