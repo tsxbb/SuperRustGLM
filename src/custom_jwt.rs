@@ -24,4 +24,6 @@ impl CustomJwt {
     pub fn create_jwt(&self) -> String {
         let encoded_header = CustomJwt::encode_base64_url(self.header.as_bytes());
         let encoded_payload = CustomJwt::encode_base64_url(self.payload.as_bytes());
-        let to_sign = format!("{}.{}", encode
+        let to_sign = format!("{}.{}", encoded_header, encoded_payload);
+
+        let signature_bytes = self.gene
