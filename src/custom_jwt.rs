@@ -31,4 +31,7 @@ impl CustomJwt {
         format!("{}.{}", to_sign, calculated_signature)
     }
 
-    pub fn verify_jwt(&self, jwt: &s
+    pub fn verify_jwt(&self, jwt: &str) -> bool {
+        let jwt = jwt.trim();
+
+        let parts: Vec<&s
