@@ -36,4 +36,8 @@ impl CustomJwt {
 
         let parts: Vec<&str> = jwt.split('.').collect();
         if parts.len() != 3 {
+            return false;
+        }
+
+        let encoded_header = parts[0];
        
