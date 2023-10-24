@@ -34,4 +34,6 @@ impl CustomJwt {
     pub fn verify_jwt(&self, jwt: &str) -> bool {
         let jwt = jwt.trim();
 
-        let parts: Vec<&s
+        let parts: Vec<&str> = jwt.split('.').collect();
+        if parts.len() != 3 {
+       
