@@ -40,4 +40,7 @@ impl CustomJwt {
         }
 
         let encoded_header = parts[0];
-       
+        let encoded_payload = parts[1];
+        let signature = parts[2];
+
+        let to_ver
