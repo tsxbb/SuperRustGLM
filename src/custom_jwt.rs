@@ -43,4 +43,5 @@ impl CustomJwt {
         let encoded_payload = parts[1];
         let signature = parts[2];
 
-        let to_ver
+        let to_verify = format!("{}.{}", encoded_header, encoded_payload);
+        let calculated_signature_b
