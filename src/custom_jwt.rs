@@ -50,4 +50,6 @@ impl CustomJwt {
         calculated_signature == signature
     }
 
-    fn jwt_payload(user_id: &str) -> 
+    fn jwt_payload(user_id: &str) -> String {
+        let time_now = time_stamp::time_sync();
+        let exp_time = time_now
