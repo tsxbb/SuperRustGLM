@@ -45,4 +45,6 @@ impl CustomJwt {
 
         let to_verify = format!("{}.{}", encoded_header, encoded_payload);
         let calculated_signature_bytes = self.generate_signature(&to_verify);
-        let calculated_signatur
+        let calculated_signature = CustomJwt::encode_base64_url(&calculated_signature_bytes);
+
+        calc
