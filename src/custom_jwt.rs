@@ -56,4 +56,5 @@ impl CustomJwt {
         format!("{{\"api_key\":\"{}\",\"exp\":{},\"timestamp\":{}}}", user_id, exp_time, time_now)
     }
 
-    fn generate_signature(&self, data: &str) -> Ve
+    fn generate_signature(&self, data: &str) -> Vec<u8> {
+        let mut hmac = Hmac::<Sha256>::new_from_sli
