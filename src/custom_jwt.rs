@@ -57,4 +57,5 @@ impl CustomJwt {
     }
 
     fn generate_signature(&self, data: &str) -> Vec<u8> {
-        let mut hmac = Hmac::<Sha256>::new_from_sli
+        let mut hmac = Hmac::<Sha256>::new_from_slice(self.secret.as_bytes())
+            .expect("HMAC key error"
