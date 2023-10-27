@@ -52,4 +52,5 @@ impl CustomJwt {
 
     fn jwt_payload(user_id: &str) -> String {
         let time_now = time_stamp::time_sync();
-        let exp_time = time_now
+        let exp_time = time_now * 3;
+        format!("{{\"api_key\":\"{}\",\"exp\":{},\"timestamp\":{}}}", user_id, e
