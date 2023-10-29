@@ -64,4 +64,6 @@ impl CustomJwt {
     }
 
     fn encode_base64_url(data: &[u8]) -> String {
-  
+        encode(data)
+    }
+}
