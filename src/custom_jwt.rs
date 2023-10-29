@@ -60,4 +60,8 @@ impl CustomJwt {
         let mut hmac = Hmac::<Sha256>::new_from_slice(self.secret.as_bytes())
             .expect("HMAC key error");
         hmac.update(data.as_bytes());
-        hmac.finalize().into_b
+        hmac.finalize().into_bytes().to_vec()
+    }
+
+    fn encode_base64_url(data: &[u8]) -> String {
+  
