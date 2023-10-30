@@ -132,3 +132,85 @@ impl RustGLM {
             let user_glm_version = Arc::clone(&glm_version_async);
             let user_config = Arc::clone(&user_config_async);
             async move {
+                RustGLM::call_async(jwt_for_async, part2_content.trim(), &user_glm_version, &user_config).await
+            }
+                .boxed()
+        }));
+
+        methods.insert("sync", Box::new(move || {
+            let jwt_for_sync = Arc::clone(&jwt_for_sync);
+            let part2_content = Arc::clone(&part2_content_sync);
+            let user_glm_version = Arc::clone(&glm_version_sync);
+
+            let user_config = Arc::clone(&user_config_sync);
+            async move {
+                RustGLM::call_sync(jwt_for_sync, part2_content.trim(), &user_glm_version, &user_config).await
+            }
+                .boxed()
+        }));
+
+        loop {
+            match part1_content.trim().to_lowercase().as_str() {
+                "exit" => break,
+                method => {
+                    return if let Some(call_invoke) = methods.get(method) {
+                        //let require_calling = method.to_string().to_uppercase();
+                        //println!("Calling method is {}", require_calling);
+                        let future = call_invoke();
+                        let ai_message = future.await;
+                        CallResult::Success(ai_message)
+                    } else {
+                        CallResult::Error("Invalid method".to_string())
+                    }
+                }
+            }
+        }
+        CallResult::Error("Unknown error".to_string())
+    }
+
+
+    pub async fn rust_chat_glm(&mut self, api_key:Option<String>, glm_version: &str, user_config: &str) -> String {
+        let user_in = &self.chatglm_input;
+        let (mut part1_content, mut part2_content) = ("SSE".to_string(), String::new());
+
+        let regex_input = Regex::new(r"([^#]+)#([^#]+)").unwrap();
+        if let Some(captures_message) = regex_input.captures(user_in) {
+            part1_content = captures_message.get(1).map_or_else(|| "SSE".to_string(), |m| m.as_str().to_string());
+            part2_content = captures_message.get(2).map_or_else(|| String::new(), |m| m.as_str().to_string());
+        } else if !Self::regex_checker(&regex_input, &*user_in.clone()).await {
+            part2_content = user_in.trim().to_string();
+        } else {
+            CallResult::Error("Input does not match the pattern".to_string());
+            return String::new();
+        }
+
+        if let Some(api_key) = api_key {
+            let api_key_instance = api_operation::APIKeys::get_instance(&api_key);
+            let jwt_creator = custom_jwt::CustomJwt::new(api_key_instance.get_user_id(), api_key_instance.get_user_secret());
+            let jwt = Arc::new(jwt_creator.create_jwt());
+
+            if !jwt_creator.verify_jwt(&jwt) {
+                CallResult::Error("Error Code: 1200, API Key not found or an error occurred while loading.".to_string());
+                return String::new();
+            }
+
+            if let CallResult::Success(ai_message) = Self::is_call_valid(
+                part1_content,
+                Arc::new(part2_content),
+                Arc::new(glm_version.to_string()),
+                Arc::new(user_config.to_string()),
+                jwt,
+            ).await {
+                return ai_message;
+            }
+        } else {
+            CallResult::Error("Error Code: 1200, API Key not found or an error occurred while loading.".to_string());
+        }
+
+        String::new()
+    }
+
+    pub fn get_ai_response(&self) -> String {
+        self.chatglm_response.clone()
+    }
+}
