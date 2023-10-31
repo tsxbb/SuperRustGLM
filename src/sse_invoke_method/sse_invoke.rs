@@ -12,4 +12,5 @@ use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use futures::stream::StreamExt;
 
-lazy_static:
+lazy_static::lazy_static! {
+    static ref UNICODE_REGEX: regex::Regex = regex::R
