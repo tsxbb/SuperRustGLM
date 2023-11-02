@@ -22,4 +22,7 @@ ChatGLM-3, ChatGLM-4 Config
 
 #[derive(Serialize, Deserialize, Debug)]
 struct AiResponse {
-    language_model: Option
+    language_model: Option<String>,
+    system_role: Option<String>,
+    system_content: Option<String>,
+ 
