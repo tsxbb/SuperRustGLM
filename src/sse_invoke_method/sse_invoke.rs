@@ -27,4 +27,6 @@ struct AiResponse {
     system_content: Option<String>,
     user_role: Option<String>,
     assistant_role: Option<String>,
-    max_token
+    max_tokens: Option<f64>,
+    temp_float: Option<f64>,
+    top_p_float: Option<f64>
