@@ -29,4 +29,9 @@ struct AiResponse {
     assistant_role: Option<String>,
     max_tokens: Option<f64>,
     temp_float: Option<f64>,
-    top_p_float: Option<f64>
+    top_p_float: Option<f64>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+struct SSEConfig {
+    ai_config
