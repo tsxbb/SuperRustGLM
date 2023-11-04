@@ -38,4 +38,6 @@ struct SSEConfig {
     ai_config_glm4: Vec<AiResponse>,
 }
 
-fn sse_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>>
+fn sse_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>> {
+    let mut file = File::open(file_path)?;
+    let mut file_content = String::new(
