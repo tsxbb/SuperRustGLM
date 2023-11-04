@@ -34,4 +34,8 @@ struct AiResponse {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct SSEConfig {
-    ai_config
+    ai_config_glm3: Vec<AiResponse>,
+    ai_config_glm4: Vec<AiResponse>,
+}
+
+fn sse_re
