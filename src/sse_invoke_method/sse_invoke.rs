@@ -51,4 +51,12 @@ fn sse_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>>
         _ => return Err("Invalid glm-format".into()),
     };
 
-    serde_json::to_string(response).
+    serde_json::to_string(response).map_err(Into::into)
+}
+
+
+/*
+ChatGLM-4V Config
+*/
+
+#[derive(Serialize, Deserialize, 
