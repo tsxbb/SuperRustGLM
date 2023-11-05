@@ -48,4 +48,7 @@ fn sse_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>>
     let response = match glm {
         "glm-3" => &config.ai_config_glm3,
         "glm-4" => &config.ai_config_glm4,
-        _ => retur
+        _ => return Err("Invalid glm-format".into()),
+    };
+
+    serde_json::to_string(response).
