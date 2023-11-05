@@ -43,4 +43,7 @@ fn sse_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>>
     let mut file_content = String::new();
     file.read_to_string(&mut file_content)?;
 
-    let config: SSEC
+    let config: SSEConfig = toml::from_str(&file_content)?;
+
+    let response = match glm {
+      
