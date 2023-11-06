@@ -59,4 +59,7 @@ fn sse_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>>
 ChatGLM-4V Config
 */
 
-#[derive(Serialize, Deserialize, 
+#[derive(Serialize, Deserialize, Debug)]
+struct Glm4vConfig {
+    model: Option<String>,
+    user_role: Option<S
