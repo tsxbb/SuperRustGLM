@@ -62,4 +62,9 @@ ChatGLM-4V Config
 #[derive(Serialize, Deserialize, Debug)]
 struct Glm4vConfig {
     model: Option<String>,
-    user_role: Option<S
+    user_role: Option<String>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+struct GLM4VConfig {
+    ai_
