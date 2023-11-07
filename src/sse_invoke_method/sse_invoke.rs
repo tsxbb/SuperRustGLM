@@ -72,4 +72,7 @@ struct GLM4VConfig {
 
 async fn glm4v_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>> {
     let file_content = tokio::fs::read_to_string(file_path).await?;
-    let config: GLM4VConfig = to
+    let config: GLM4VConfig = toml::from_str(&file_content)?;
+
+    let response = match glm {
+        "
