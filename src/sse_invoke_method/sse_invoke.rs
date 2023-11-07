@@ -70,4 +70,5 @@ struct GLM4VConfig {
     ai_config_glm4v: Vec<Glm4vConfig>,
 }
 
-async fn glm4v_read_config(file_path: &str
+async fn glm4v_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn Error>> {
+    let file_content = tokio::f
