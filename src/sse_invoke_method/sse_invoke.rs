@@ -67,4 +67,7 @@ struct Glm4vConfig {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct GLM4VConfig {
-    ai_
+    ai_config_glm4v: Vec<Glm4vConfig>,
+}
+
+async fn glm4v_read_config(file_path: &str
