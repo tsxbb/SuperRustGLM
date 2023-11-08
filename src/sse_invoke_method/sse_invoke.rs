@@ -75,4 +75,5 @@ async fn glm4v_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn
     let config: GLM4VConfig = toml::from_str(&file_content)?;
 
     let response = match glm {
-        "
+        "glm-4v" => config.ai_config_glm4v,
+        _ => return Err("Invalid glm4v".into(
