@@ -81,4 +81,13 @@ async fn glm4v_read_config(file_path: &str, glm: &str) -> Result<String, Box<dyn
 
     let json_string = serde_json::to_string(&response)?;
 
-    Ok(jso
+    Ok(json_string)
+}
+
+
+/*
+Create chatglm-4v message format by Regex
+*/
+
+
+#[derive(Seriali
