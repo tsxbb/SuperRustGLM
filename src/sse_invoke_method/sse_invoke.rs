@@ -90,4 +90,9 @@ Create chatglm-4v message format by Regex
 */
 
 
-#[derive(Seriali
+#[derive(Serialize, Deserialize)]
+struct ImageUrl {
+    url: String,
+}
+
+#[derive(Serialize, Deserialize
