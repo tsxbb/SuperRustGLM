@@ -95,4 +95,7 @@ struct ImageUrl {
     url: String,
 }
 
-#[derive(Serialize, Deserialize
+#[derive(Serialize, Deserialize)]
+struct Content {
+    #[serde(rename = "type")]
+    content
