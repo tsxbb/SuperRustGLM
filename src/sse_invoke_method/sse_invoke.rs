@@ -98,4 +98,6 @@ struct ImageUrl {
 #[derive(Serialize, Deserialize)]
 struct Content {
     #[serde(rename = "type")]
-    content
+    content_type: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    text: Option<Str
