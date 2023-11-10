@@ -100,4 +100,6 @@ struct Content {
     #[serde(rename = "type")]
     content_type: String,
     #[serde(skip_serializing_if = "Option::is_none")]
-    text: Option<Str
+    text: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    image_url: Option<Ima
