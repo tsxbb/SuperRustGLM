@@ -106,4 +106,9 @@ struct Content {
 }
 
 #[derive(Serialize, Deserialize)]
-struct JSONR
+struct JSONResonseData {
+    role: String,
+    content: Vec<Content>,
+}
+
+fn create_4vj
