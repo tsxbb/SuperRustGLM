@@ -102,4 +102,8 @@ struct Content {
     #[serde(skip_serializing_if = "Option::is_none")]
     text: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    image_url: Option<Ima
+    image_url: Option<ImageUrl>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct JSONR
