@@ -111,4 +111,4 @@ struct JSONResonseData {
     content: Vec<Content>,
 }
 
-fn create_4vj
+fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseData 
