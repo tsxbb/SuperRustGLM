@@ -114,4 +114,5 @@ struct JSONResonseData {
 fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseData {
     let regex_input = Regex::new(r"([^@]+)@([^@]+)").unwrap();
 
-    let 
+    let mut part1_content = String::new();
+    let mut part2_content = String::
