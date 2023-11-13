@@ -111,4 +111,7 @@ struct JSONResonseData {
     content: Vec<Content>,
 }
 
-fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseData 
+fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseData {
+    let regex_input = Regex::new(r"([^@]+)@([^@]+)").unwrap();
+
+    let 
