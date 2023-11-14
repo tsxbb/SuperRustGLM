@@ -115,4 +115,6 @@ fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseDa
     let regex_input = Regex::new(r"([^@]+)@([^@]+)").unwrap();
 
     let mut part1_content = String::new();
-    let mut part2_content = String::
+    let mut part2_content = String::new();
+
+    if let Some(captures_content) = regex_input.captures(&user_inp
