@@ -119,4 +119,6 @@ fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseDa
 
     if let Some(captures_content) = regex_input.captures(&user_input) {
         if let Some(first_part) = captures_content.get(1) {
-            
+            part1_content = first_part.as_str().to_string();
+        }
+        if let Som
