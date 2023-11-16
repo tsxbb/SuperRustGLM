@@ -122,4 +122,7 @@ fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseDa
             part1_content = first_part.as_str().to_string();
         }
         if let Some(second_part) = captures_content.get(2) {
-            part2_content = second_part.as_s
+            part2_content = second_part.as_str().to_string();
+        }
+    } else {
+        println!("Input does not mat
