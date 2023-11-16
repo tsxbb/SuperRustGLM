@@ -125,4 +125,9 @@ fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseDa
             part2_content = second_part.as_str().to_string();
         }
     } else {
-        println!("Input does not mat
+        println!("Input does not match the pattern");
+    }
+
+    JSONResonseData {
+        role: user_role,
+        content: vec!
