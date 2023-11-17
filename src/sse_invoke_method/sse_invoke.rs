@@ -130,4 +130,7 @@ fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseDa
 
     JSONResonseData {
         role: user_role,
-        content: vec!
+        content: vec![
+            Content {
+                content_type: "text".to_string(),
+                text:
