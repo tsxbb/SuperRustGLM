@@ -133,4 +133,7 @@ fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseDa
         content: vec![
             Content {
                 content_type: "text".to_string(),
-                text:
+                text: Some(part1_content),
+                image_url: None,
+            },
+   
