@@ -146,4 +146,8 @@ fn create_4vjson_message(user_role: String, user_input: String) -> JSONResonseDa
 }
 
 /*
-History Message Contr
+History Message Controller(Save Messages)
+*/
+
+pub struct MessageProcessor {
+    
