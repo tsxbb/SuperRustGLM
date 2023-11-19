@@ -150,4 +150,8 @@ History Message Controller(Save Messages)
 */
 
 pub struct MessageProcessor {
-    
+    messages: history_message::HistoryMessage,
+}
+
+impl MessageProcessor {
+    pub fn new()
