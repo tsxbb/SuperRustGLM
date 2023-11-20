@@ -160,4 +160,5 @@ impl MessageProcessor {
         }
     }
 
-    pub fn set_input_message(&self) -> Opti
+    pub fn set_input_message(&self) -> Option<String> {
+        let message = self.messages.load_history_from_
