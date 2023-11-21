@@ -170,4 +170,6 @@ impl MessageProcessor {
     }
 
     pub fn last_messages(&self, role: &str, messages: &str) -> String {
-        let input_message = sel
+        let input_message = self.set_input_message().unwrap_or_default();
+
+        let mut input: Value = serde_
