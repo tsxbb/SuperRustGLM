@@ -165,4 +165,8 @@ impl MessageProcessor {
         if !message.is_empty() {
             Some(message)
         } else {
-           
+            None
+        }
+    }
+
+    pub fn last_messages(&self, role: &str,
