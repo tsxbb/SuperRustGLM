@@ -169,4 +169,5 @@ impl MessageProcessor {
         }
     }
 
-    pub fn last_messages(&self, role: &str,
+    pub fn last_messages(&self, role: &str, messages: &str) -> String {
+        let input_message = sel
