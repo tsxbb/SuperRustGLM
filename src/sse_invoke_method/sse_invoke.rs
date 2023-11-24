@@ -180,4 +180,5 @@ impl MessageProcessor {
 
         let regex = Regex::new(r",(\s*})").expect("Failed to create regex pattern");
 
-        let user_messages = input_message.cl
+        let user_messages = input_message.clone() + &texts.clone();
+        let result = regex.replace_all(&user_
