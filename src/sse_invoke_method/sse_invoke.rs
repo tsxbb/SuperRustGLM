@@ -197,4 +197,5 @@ pub struct SSEInvokeModel {
 impl SSEInvokeModel {
     pub fn new() -> Self {
         SSEInvokeModel {
-          
+            get_message: String::new(),
+            ai_response_data: String::
