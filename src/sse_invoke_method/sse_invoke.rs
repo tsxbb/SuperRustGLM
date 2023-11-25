@@ -188,4 +188,10 @@ impl MessageProcessor {
 }
 
 
-#[derive(Debug, Serialize, Dese
+#[derive(Debug, Serialize, Deserialize)]
+pub struct SSEInvokeModel {
+    get_message: String,
+    ai_response_data: String,
+}
+
+impl S
