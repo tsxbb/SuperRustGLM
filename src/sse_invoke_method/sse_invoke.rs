@@ -198,4 +198,8 @@ impl SSEInvokeModel {
     pub fn new() -> Self {
         SSEInvokeModel {
             get_message: String::new(),
-            ai_response_data: String::
+            ai_response_data: String::new(),
+        }
+    }
+
+    pub async fn sse_request(token: String, input: Strin
