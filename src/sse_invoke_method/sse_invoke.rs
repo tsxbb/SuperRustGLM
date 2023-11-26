@@ -204,4 +204,4 @@ impl SSEInvokeModel {
 
     pub async fn sse_request(token: String, input: String, glm_version: &str, user_config: &str, default_url: String) -> Result<String, Box<dyn Error>> {
         let mut sse_invoke_model = Self::new();
-        Self::sse_invoke_request_method(&mut sse_invoke_model, token
+        Self::sse_invoke_request_method(&mut sse_invoke_model, token.clone(), input.clone(), glm_version, user_config, default_url.clone()).await?;
