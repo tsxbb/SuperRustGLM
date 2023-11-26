@@ -202,4 +202,4 @@ impl SSEInvokeModel {
         }
     }
 
-    pub async fn sse_request(token: String, input: Strin
+    pub async fn sse_request(token: String, input: String, glm_version: &str, user_config: &str, default_url: String) -> Result<
