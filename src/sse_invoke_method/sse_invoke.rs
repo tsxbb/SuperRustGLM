@@ -206,4 +206,10 @@ impl SSEInvokeModel {
         let mut sse_invoke_model = Self::new();
         Self::sse_invoke_request_method(&mut sse_invoke_model, token.clone(), input.clone(), glm_version, user_config, default_url.clone()).await?;
         let response_message = sse_invoke_model.ai_response_data.clone();
-        let result = sse_invoke_model.process_sse_message(&*response_messa
+        let result = sse_invoke_model.process_sse_message(&*response_message, &input);
+        Ok(result)
+    }
+
+
+    /*
+    GLM4V request body by
