@@ -212,4 +212,9 @@ impl SSEInvokeModel {
 
 
     /*
-    GLM4V request body by
+    GLM4V request body by JSON
+     */
+
+    async fn generate_glm4v_json_request_body(
+        model: &str,
+    
