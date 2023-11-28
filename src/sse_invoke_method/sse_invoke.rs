@@ -217,4 +217,6 @@ impl SSEInvokeModel {
 
     async fn generate_glm4v_json_request_body(
         model: &str,
-    
+        user_role: String,
+        user_input: String,
+    ) -> Result<Str
