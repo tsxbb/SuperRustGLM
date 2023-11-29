@@ -219,4 +219,5 @@ impl SSEInvokeModel {
         model: &str,
         user_role: String,
         user_input: String,
-    ) -> Result<Str
+    ) -> Result<String, Box<dyn Error>> {
+        let user_array_message = vec![create_4vjson
