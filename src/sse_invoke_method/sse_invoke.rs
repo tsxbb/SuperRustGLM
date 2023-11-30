@@ -222,4 +222,7 @@ impl SSEInvokeModel {
     ) -> Result<String, Box<dyn Error>> {
         let user_array_message = vec![create_4vjson_message(user_role, user_input)];
 
-        let json_request_body = json!
+        let json_request_body = json!({
+        "model": model,
+        "messages": user_array_message,
+        "stream": true
