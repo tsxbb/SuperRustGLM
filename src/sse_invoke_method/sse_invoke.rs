@@ -226,3 +226,7 @@ impl SSEInvokeModel {
         "model": model,
         "messages": user_array_message,
         "stream": true
+    });
+
+        let json_string = serde_json::to_string(&json_request_body)?;
+        let
