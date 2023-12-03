@@ -229,4 +229,12 @@ impl SSEInvokeModel {
     });
 
         let json_string = serde_json::to_string(&json_request_body)?;
-        let result = json_string.replace(r"\\\\", r"\\").replace(r"\\", r"").trim().to_str
+        let result = json_string.replace(r"\\\\", r"\\").replace(r"\\", r"").trim().to_string();
+
+        Ok(result)
+    }
+
+
+    /*
+    ChatGLM3 / 4 request body by JSON
+     */
