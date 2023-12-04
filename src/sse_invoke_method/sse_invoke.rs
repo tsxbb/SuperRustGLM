@@ -238,3 +238,7 @@ impl SSEInvokeModel {
     /*
     ChatGLM3 / 4 request body by JSON
      */
+
+    async fn generate_sse_json_request_body(
+        language_model: &str,
+   
