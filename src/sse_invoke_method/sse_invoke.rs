@@ -244,3 +244,7 @@ impl SSEInvokeModel {
         system_role: &str,
         system_content: &str,
         user_role: &str,
+        user_input: &str,
+        max_token: f64,
+        temp_float: f64,
+        t
