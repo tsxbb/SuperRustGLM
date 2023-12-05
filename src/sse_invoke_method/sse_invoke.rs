@@ -241,4 +241,6 @@ impl SSEInvokeModel {
 
     async fn generate_sse_json_request_body(
         language_model: &str,
-   
+        system_role: &str,
+        system_content: &str,
+        user_role: &str,
