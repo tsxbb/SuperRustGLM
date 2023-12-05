@@ -249,4 +249,7 @@ impl SSEInvokeModel {
         temp_float: f64,
         top_p_float: f64,
     ) -> Result<String, Box<dyn Error>> {
-        let message_process = M
+        let message_process = MessageProcessor::new();
+
+        let messages = json!([
+        {"role": system_role, "
