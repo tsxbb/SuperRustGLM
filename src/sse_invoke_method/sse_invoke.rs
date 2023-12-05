@@ -247,4 +247,6 @@ impl SSEInvokeModel {
         user_input: &str,
         max_token: f64,
         temp_float: f64,
-        t
+        top_p_float: f64,
+    ) -> Result<String, Box<dyn Error>> {
+        let message_process = M
