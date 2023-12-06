@@ -252,4 +252,5 @@ impl SSEInvokeModel {
         let message_process = MessageProcessor::new();
 
         let messages = json!([
-        {"role": system_role, "
+        {"role": system_role, "content": system_content},
+        {"role": user_role, "content": message_
