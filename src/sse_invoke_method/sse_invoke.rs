@@ -261,4 +261,9 @@ impl SSEInvokeModel {
         "messages": messages,
         "stream": true,
         "do_sample":true,
-        "max_tokens":max_tok
+        "max_tokens":max_token,
+        "temperature": temp_float,
+        "top_p": top_p_float
+    });
+
+       
