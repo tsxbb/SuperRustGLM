@@ -256,4 +256,6 @@ impl SSEInvokeModel {
         {"role": user_role, "content": message_process.last_messages(user_role,user_input)}
     ]);
 
-        let json_reques
+        let json_request_body = json!({
+        "model": language_model,
+        "messages": messages,
