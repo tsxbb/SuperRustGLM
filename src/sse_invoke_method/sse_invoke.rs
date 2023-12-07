@@ -259,3 +259,6 @@ impl SSEInvokeModel {
         let json_request_body = json!({
         "model": language_model,
         "messages": messages,
+        "stream": true,
+        "do_sample":true,
+        "max_tokens":max_tok
