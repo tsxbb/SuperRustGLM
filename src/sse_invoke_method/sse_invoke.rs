@@ -266,4 +266,6 @@ impl SSEInvokeModel {
         "top_p": top_p_float
     });
 
-       
+        let json_string = serde_json::to_string(&json_request_body)?;
+
+        
