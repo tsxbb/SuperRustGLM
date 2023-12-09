@@ -269,4 +269,7 @@ impl SSEInvokeModel {
         let json_string = serde_json::to_string(&json_request_body)?;
 
         // 替换字符，注意使用转义符号
-        let result = json_string.replace(r"\\\\", r"\\").replace
+        let result = json_string.replace(r"\\\\", r"\\").replace(r"\\", r"").trim().to_string();
+
+        // 打印生成的 JSON 字符串
+        //println!
