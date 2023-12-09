@@ -272,4 +272,11 @@ impl SSEInvokeModel {
         let result = json_string.replace(r"\\\\", r"\\").replace(r"\\", r"").trim().to_string();
 
         // 打印生成的 JSON 字符串
-        //println!
+        //println!("{:#}", result.trim());
+
+        Ok(result)
+    }
+
+
+    /*
+     GLM4V_Han
