@@ -282,4 +282,4 @@ impl SSEInvokeModel {
      GLM4V_Handler Request by async
      */
 
-    async fn glm4v_handle_sse_request(use
+    async fn glm4v_handle_sse_request(user_config: &str, part2_content: String) -> Result<String, Box<dyn Error>> {
