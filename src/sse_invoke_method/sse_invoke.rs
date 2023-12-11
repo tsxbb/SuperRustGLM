@@ -283,4 +283,6 @@ impl SSEInvokeModel {
      */
 
     async fn glm4v_handle_sse_request(user_config: &str, part2_content: String) -> Result<String, Box<dyn Error>> {
-        let json_string = match glm4v_read_config(user_config, "glm-4
+        let json_string = match glm4v_read_config(user_config, "glm-4v").await {
+            Ok(json_string) => json_string,
+           
