@@ -288,4 +288,7 @@ impl SSEInvokeModel {
             Err(err) => return Err(Box::from(format!("Error reading config file: {}", err))),
         };
 
-        let glm4v_json_value: Value = serde_json::from_str(
+        let glm4v_json_value: Value = serde_json::from_str(&json_string)
+            .map_err(|err| Box::new(err))?;
+
+        let model =
