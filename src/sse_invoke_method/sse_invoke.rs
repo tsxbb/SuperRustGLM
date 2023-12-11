@@ -286,4 +286,6 @@ impl SSEInvokeModel {
         let json_string = match glm4v_read_config(user_config, "glm-4v").await {
             Ok(json_string) => json_string,
             Err(err) => return Err(Box::from(format!("Error reading config file: {}", err))),
-  
+        };
+
+        let glm4v_json_value: Value = serde_json::from_str(
