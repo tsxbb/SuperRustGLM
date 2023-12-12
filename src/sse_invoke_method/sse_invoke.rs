@@ -291,4 +291,5 @@ impl SSEInvokeModel {
         let glm4v_json_value: Value = serde_json::from_str(&json_string)
             .map_err(|err| Box::new(err))?;
 
-        let model = glm4v_json_value[0]["model"].as_str().ok_or("Failed to get model")?.
+        let model = glm4v_json_value[0]["model"].as_str().ok_or("Failed to get model")?.to_string();
+        let user_role = glm4v_json_value[0]["user_role
