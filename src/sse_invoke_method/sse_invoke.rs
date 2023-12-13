@@ -301,3 +301,10 @@ impl SSEInvokeModel {
         ).await?
             .to_string())
     }
+
+
+    /*
+     Normal_Handler Request by async
+     */
+
+    async fn async_handle_sse_
