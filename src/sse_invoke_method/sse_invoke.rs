@@ -296,4 +296,8 @@ impl SSEInvokeModel {
 
         Ok(Self::generate_glm4v_json_request_body(
             &model,
-           
+            user_role,
+            part2_content,
+        ).await?
+            .to_string())
+    }
