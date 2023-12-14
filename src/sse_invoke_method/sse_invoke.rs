@@ -307,4 +307,5 @@ impl SSEInvokeModel {
      Normal_Handler Request by async
      */
 
-    async fn async_handle_sse_request(user_config: &str, glm_version: &str, part2_content: String) -> R
+    async fn async_handle_sse_request(user_config: &str, glm_version: &str, part2_content: String) -> Result<String, Box<dyn Error>> {
+        let json_string = match sse_r
