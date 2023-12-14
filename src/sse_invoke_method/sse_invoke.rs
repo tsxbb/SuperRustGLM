@@ -307,4 +307,4 @@ impl SSEInvokeModel {
      Normal_Handler Request by async
      */
 
-    async fn async_handle_sse_
+    async fn async_handle_sse_request(user_config: &str, glm_version: &str, part2_content: String) -> R
