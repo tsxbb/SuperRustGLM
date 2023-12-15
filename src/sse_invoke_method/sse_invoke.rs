@@ -314,4 +314,8 @@ impl SSEInvokeModel {
         };
 
         let json_value: Value = serde_json::from_str(&json_string)
-            .map_err(|err| Box::new
+            .map_err(|err| Box::new(err))?;
+
+        let language_model = json_value[0]["language_model"]
+            .as_str()
+    
