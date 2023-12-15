@@ -310,4 +310,7 @@ impl SSEInvokeModel {
     async fn async_handle_sse_request(user_config: &str, glm_version: &str, part2_content: String) -> Result<String, Box<dyn Error>> {
         let json_string = match sse_read_config(user_config, glm_version) {
             Ok(json_string) => json_string,
-            Err(err) => return Err(Box::from(format!("Error reading
+            Err(err) => return Err(Box::from(format!("Error reading config file: {}", err))),
+        };
+
+        let json_value: Value = ser
