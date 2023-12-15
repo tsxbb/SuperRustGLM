@@ -318,4 +318,6 @@ impl SSEInvokeModel {
 
         let language_model = json_value[0]["language_model"]
             .as_str()
-    
+            .ok_or("Failed to get language_model")?
+            .to_string();
+       
