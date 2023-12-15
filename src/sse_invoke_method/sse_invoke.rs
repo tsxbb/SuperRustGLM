@@ -313,4 +313,5 @@ impl SSEInvokeModel {
             Err(err) => return Err(Box::from(format!("Error reading config file: {}", err))),
         };
 
-        let json_value: Value = ser
+        let json_value: Value = serde_json::from_str(&json_string)
+            .map_err(|err| Box::new
