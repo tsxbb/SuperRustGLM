@@ -320,4 +320,6 @@ impl SSEInvokeModel {
             .as_str()
             .ok_or("Failed to get language_model")?
             .to_string();
-       
+        let system_role = json_value[0]["system_role"]
+            .as_str()
+  
