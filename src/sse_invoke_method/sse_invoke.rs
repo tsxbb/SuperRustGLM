@@ -325,4 +325,5 @@ impl SSEInvokeModel {
             .ok_or("Failed to get system_role")?
             .to_string();
         let system_content = json_value[0]["system_content"]
-  
+            .as_str()
+            .ok_or("Failed to get system_content")?
