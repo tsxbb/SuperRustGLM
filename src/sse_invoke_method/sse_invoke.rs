@@ -327,3 +327,6 @@ impl SSEInvokeModel {
         let system_content = json_value[0]["system_content"]
             .as_str()
             .ok_or("Failed to get system_content")?
+            .trim()
+            .to_string();
+        let user_role = jso
