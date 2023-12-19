@@ -333,4 +333,6 @@ impl SSEInvokeModel {
             .as_str()
             .ok_or("Failed to get user_role")?
             .to_string();
-        let max_token = js
+        let max_token = json_value[0]["max_tokens"]
+            .as_f64()
+            .ok_
