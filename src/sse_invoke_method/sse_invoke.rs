@@ -335,4 +335,5 @@ impl SSEInvokeModel {
             .to_string();
         let max_token = json_value[0]["max_tokens"]
             .as_f64()
-            .ok_
+            .ok_or("Failed to get max_token")?;
+        let temp_float = json_value[0]["temp_f
