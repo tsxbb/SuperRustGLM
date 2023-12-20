@@ -340,3 +340,7 @@ impl SSEInvokeModel {
             .as_f64()
             .ok_or("Failed to get temp_float")?;
         let top_p_float = json_value[0]["top_p_float"]
+            .as_f64()
+            .ok_or("Failed to get top_p_float")?;
+
+ 
