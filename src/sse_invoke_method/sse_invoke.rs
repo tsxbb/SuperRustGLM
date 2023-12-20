@@ -344,4 +344,7 @@ impl SSEInvokeModel {
             .ok_or("Failed to get top_p_float")?;
 
         Ok(Self::generate_sse_json_request_body(
-            &language
+            &language_model,
+            &system_role,
+            &system_content,
+            &user_ro
