@@ -347,4 +347,7 @@ impl SSEInvokeModel {
             &language_model,
             &system_role,
             &system_content,
-            &user_ro
+            &user_role,
+            &part2_content,
+            max_token,
+            t
