@@ -350,4 +350,7 @@ impl SSEInvokeModel {
             &user_role,
             &part2_content,
             max_token,
-            t
+            temp_float,
+            top_p_float,
+        ).await?
+            .to_string())
