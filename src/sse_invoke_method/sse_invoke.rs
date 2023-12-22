@@ -356,4 +356,7 @@ impl SSEInvokeModel {
             .to_string())
     }
 
-    async fn async_mode_checker(require_calling: Str
+    async fn async_mode_checker(require_calling: String) -> bool {
+        require_calling.to_lowercase() == "glm4v"
+    }
+
