@@ -354,3 +354,6 @@ impl SSEInvokeModel {
             top_p_float,
         ).await?
             .to_string())
+    }
+
+    async fn async_mode_checker(require_calling: Str
