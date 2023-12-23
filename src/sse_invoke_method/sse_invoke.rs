@@ -360,3 +360,5 @@ impl SSEInvokeModel {
         require_calling.to_lowercase() == "glm4v"
     }
 
+    async fn regex_checker(regex: &Regex, input: String) -> bool {
+        regex.is_m
