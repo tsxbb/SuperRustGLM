@@ -365,4 +365,6 @@ impl SSEInvokeModel {
     }
 
     async fn json_content_post_function(user_input: String, glm_version: &str, user_config: &str) -> String {
-        let regex_in = Regex::new(r"(.*?)
+        let regex_in = Regex::new(r"(.*?):(.*)").unwrap();
+
+        if SSEInvokeModel::regex_checker(&regex
