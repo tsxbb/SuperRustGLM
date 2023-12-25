@@ -361,4 +361,7 @@ impl SSEInvokeModel {
     }
 
     async fn regex_checker(regex: &Regex, input: String) -> bool {
-        regex.is_m
+        regex.is_match(&*input)
+    }
+
+    async fn json_content_post_function(user_input: String, glm_version:
