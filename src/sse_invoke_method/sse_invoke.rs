@@ -368,4 +368,7 @@ impl SSEInvokeModel {
         let regex_in = Regex::new(r"(.*?):(.*)").unwrap();
 
         if SSEInvokeModel::regex_checker(&regex_in, user_input.clone()).await {
-            let mut part1_content = String::n
+            let mut part1_content = String::new();
+            let mut part2_content = String::new();
+
+            if let Some(captures_me
