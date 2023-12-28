@@ -371,4 +371,5 @@ impl SSEInvokeModel {
             let mut part1_content = String::new();
             let mut part2_content = String::new();
 
-            if let Some(captures_me
+            if let Some(captures_message) = regex_in.captures(&user_input) {
+                if let S
