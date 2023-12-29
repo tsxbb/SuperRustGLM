@@ -373,4 +373,6 @@ impl SSEInvokeModel {
 
             if let Some(captures_message) = regex_in.captures(&user_input) {
                 if let Some(first_part) = captures_message.get(1) {
-                    part1_content = fir
+                    part1_content = first_part.as_str().to_string();
+                }
+                if let Some(second_part
