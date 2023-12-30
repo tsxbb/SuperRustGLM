@@ -376,4 +376,7 @@ impl SSEInvokeModel {
                     part1_content = first_part.as_str().to_string();
                 }
                 if let Some(second_part) = captures_message.get(2) {
-                    part2_content = second_part.as
+                    part2_content = second_part.as_str().to_string();
+                }
+            } else {
+                println!
