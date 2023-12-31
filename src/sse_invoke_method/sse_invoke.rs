@@ -379,4 +379,5 @@ impl SSEInvokeModel {
                     part2_content = second_part.as_str().to_string();
                 }
             } else {
-                println!
+                println!("Input does not match the pattern");
+                return String::new()
