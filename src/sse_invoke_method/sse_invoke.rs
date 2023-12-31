@@ -380,4 +380,7 @@ impl SSEInvokeModel {
                 }
             } else {
                 println!("Input does not match the pattern");
-                return String::new()
+                return String::new();
+            }
+
+            if SSEInvokeModel::async_mode_checker(part1_conte
