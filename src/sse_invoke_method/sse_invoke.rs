@@ -383,4 +383,5 @@ impl SSEInvokeModel {
                 return String::new();
             }
 
-            if SSEInvokeModel::async_mode_checker(part1_conte
+            if SSEInvokeModel::async_mode_checker(part1_content.clone()).await {
+                match SSEInvokeModel::glm4v_handle_sse_re
