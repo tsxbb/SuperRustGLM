@@ -387,4 +387,6 @@ impl SSEInvokeModel {
                 match SSEInvokeModel::glm4v_handle_sse_request(user_config, part2_content.clone()).await {
                     Ok(result) => result,
                     Err(err) => {
-                       
+                        println!("{}", err);
+                        return String::new();
+                  
