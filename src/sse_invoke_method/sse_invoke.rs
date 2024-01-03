@@ -389,4 +389,7 @@ impl SSEInvokeModel {
                     Err(err) => {
                         println!("{}", err);
                         return String::new();
-                  
+                    }
+                }
+            } else {
+                match SSE
