@@ -392,4 +392,4 @@ impl SSEInvokeModel {
                     }
                 }
             } else {
-                match SSE
+                match SSEInvokeModel::async_handle_sse_request(user_config, glm_version, user
