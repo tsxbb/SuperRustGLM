@@ -394,3 +394,6 @@ impl SSEInvokeModel {
             } else {
                 match SSEInvokeModel::async_handle_sse_request(user_config, glm_version, user_input.clone()).await {
                     Ok(result) => result,
+                    Err(err) => {
+                        println!("{}", err);
+             
