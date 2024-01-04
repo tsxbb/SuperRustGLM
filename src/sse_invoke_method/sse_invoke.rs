@@ -399,4 +399,6 @@ impl SSEInvokeModel {
                         return String::new();
                     }
                 }
-    
+            }
+        } else {
+            match SSEInvokeModel::async_handle_ss
