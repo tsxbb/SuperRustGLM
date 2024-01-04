@@ -396,4 +396,7 @@ impl SSEInvokeModel {
                     Ok(result) => result,
                     Err(err) => {
                         println!("{}", err);
-             
+                        return String::new();
+                    }
+                }
+    
