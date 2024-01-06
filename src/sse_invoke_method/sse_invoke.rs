@@ -412,4 +412,7 @@ impl SSEInvokeModel {
     }
 
     pub async fn sse_invoke_request_method(
-       
+        &mut self,
+        token: String,
+        user_input: String,
+        glm_ver
