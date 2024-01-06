@@ -407,4 +407,9 @@ impl SSEInvokeModel {
                     println!("{}", err);
                     return String::new();
                 }
-        
+            }
+        }
+    }
+
+    pub async fn sse_invoke_request_method(
+       
