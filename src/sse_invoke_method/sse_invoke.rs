@@ -415,4 +415,7 @@ impl SSEInvokeModel {
         &mut self,
         token: String,
         user_input: String,
-        glm_ver
+        glm_version: &str,
+        user_config: &str,
+        default_url: String,
+    ) -> 
