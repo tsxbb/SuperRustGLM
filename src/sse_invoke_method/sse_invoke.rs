@@ -418,4 +418,6 @@ impl SSEInvokeModel {
         glm_version: &str,
         user_config: &str,
         default_url: String,
-    ) -> 
+    ) -> Result<String, String> {
+        /*
+                println!("LANGUAGE_MODEL: {}", l
