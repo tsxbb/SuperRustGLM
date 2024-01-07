@@ -423,4 +423,5 @@ impl SSEInvokeModel {
                 println!("LANGUAGE_MODEL: {}", language_model);
                 println!("SYSTEM_ROLE: {}", system_role);
                 println!("SYSTEM_CONTENT: {}", system_content);
-           
+                println!("USER_ROLE: {}", user_role);
+                println
