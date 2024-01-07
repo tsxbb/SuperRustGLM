@@ -420,4 +420,5 @@ impl SSEInvokeModel {
         default_url: String,
     ) -> Result<String, String> {
         /*
-                println!("LANGUAGE_MODEL: {}", l
+                println!("LANGUAGE_MODEL: {}", language_model);
+                println!("SYSTEM_ROLE: {}", system_role)
