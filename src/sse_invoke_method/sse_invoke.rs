@@ -421,4 +421,6 @@ impl SSEInvokeModel {
     ) -> Result<String, String> {
         /*
                 println!("LANGUAGE_MODEL: {}", language_model);
-                println!("SYSTEM_ROLE: {}", system_role)
+                println!("SYSTEM_ROLE: {}", system_role);
+                println!("SYSTEM_CONTENT: {}", system_content);
+           
