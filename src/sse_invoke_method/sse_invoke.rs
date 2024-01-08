@@ -427,4 +427,5 @@ impl SSEInvokeModel {
                 println!("Token_NUM: {}", max_token);
                 println!("TEMP_FLOAT: {}", temp_float);
                 println!("TOP_P_FLOAT: {}", top_p_float);
-     
+        */
+        let post_json = Self::json_content_post_function(user_input, glm_ve
