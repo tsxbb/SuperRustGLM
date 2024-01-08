@@ -425,4 +425,6 @@ impl SSEInvokeModel {
                 println!("SYSTEM_CONTENT: {}", system_content);
                 println!("USER_ROLE: {}", user_role);
                 println!("Token_NUM: {}", max_token);
-                println!("TEMP_FLOAT: {}"
+                println!("TEMP_FLOAT: {}", temp_float);
+                println!("TOP_P_FLOAT: {}", top_p_float);
+     
