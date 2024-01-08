@@ -424,4 +424,5 @@ impl SSEInvokeModel {
                 println!("SYSTEM_ROLE: {}", system_role);
                 println!("SYSTEM_CONTENT: {}", system_content);
                 println!("USER_ROLE: {}", user_role);
-                println
+                println!("Token_NUM: {}", max_token);
+                println!("TEMP_FLOAT: {}"
