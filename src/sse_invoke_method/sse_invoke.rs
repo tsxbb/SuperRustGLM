@@ -431,4 +431,5 @@ impl SSEInvokeModel {
         let post_json = Self::json_content_post_function(user_input, glm_version, user_config);
 
         let request_result = reqwest::Client::new()
-         
+            .post(&default_url)
+            .header("Cache-Control", "no-c
