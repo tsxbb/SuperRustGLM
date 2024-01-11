@@ -432,4 +432,6 @@ impl SSEInvokeModel {
 
         let request_result = reqwest::Client::new()
             .post(&default_url)
-            .header("Cache-Control", "no-c
+            .header("Cache-Control", "no-cache")
+            .header("Connection", "keep-alive")
+            .
