@@ -434,4 +434,5 @@ impl SSEInvokeModel {
             .post(&default_url)
             .header("Cache-Control", "no-cache")
             .header("Connection", "keep-alive")
-            .
+            .header("Accept", "text/event-stream")
+            .header("Content-Type"
