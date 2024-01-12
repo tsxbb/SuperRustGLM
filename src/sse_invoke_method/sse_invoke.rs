@@ -438,4 +438,6 @@ impl SSEInvokeModel {
             .header("Content-Type", "application/json;charset=UTF-8")
             .header("Authorization", format!("Bearer {}", token))
             .body(post_json.await)
-   
+            .send()
+            .await
+            .map_err(|err| format!("HTTP request 
