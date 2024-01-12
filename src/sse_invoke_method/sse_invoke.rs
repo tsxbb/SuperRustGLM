@@ -436,4 +436,6 @@ impl SSEInvokeModel {
             .header("Connection", "keep-alive")
             .header("Accept", "text/event-stream")
             .header("Content-Type", "application/json;charset=UTF-8")
-            .header("Authorization
+            .header("Authorization", format!("Bearer {}", token))
+            .body(post_json.await)
+   
