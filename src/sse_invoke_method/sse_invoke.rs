@@ -440,4 +440,7 @@ impl SSEInvokeModel {
             .body(post_json.await)
             .send()
             .await
-            .map_err(|err| format!("HTTP request 
+            .map_err(|err| format!("HTTP request failure: {}", err))?;
+
+        if !request_result.status().is_success() {
+   
