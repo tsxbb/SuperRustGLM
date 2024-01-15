@@ -443,4 +443,7 @@ impl SSEInvokeModel {
             .map_err(|err| format!("HTTP request failure: {}", err))?;
 
         if !request_result.status().is_success() {
-            return Err(format!("Server returned an error: {}", request_resul
+            return Err(format!("Server returned an error: {}", request_result.status()));
+        }
+
+        let mut response_body = request_result.bytes_str
