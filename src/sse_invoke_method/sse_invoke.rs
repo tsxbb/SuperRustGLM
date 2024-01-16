@@ -454,4 +454,5 @@ impl SSEInvokeModel {
         while let Some(chunk) = response_body.next().await {
             match chunk {
                 Ok(bytes) => {
-            
+                    let data = String::from_utf8_lossy(&bytes);
+                    sse_dat
