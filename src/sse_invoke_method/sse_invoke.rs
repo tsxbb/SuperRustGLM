@@ -450,3 +450,6 @@ impl SSEInvokeModel {
         // 用于存储 SSE 事件的字符串
         let mut sse_data = String::new();
 
+        // 处理 SSE 事件
+        while let Some(chunk) = response_body.next().await {
+        
