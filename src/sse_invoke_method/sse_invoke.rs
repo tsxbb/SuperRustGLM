@@ -446,4 +446,7 @@ impl SSEInvokeModel {
             return Err(format!("Server returned an error: {}", request_result.status()));
         }
 
-        let mut response_body = request_result.bytes_str
+        let mut response_body = request_result.bytes_stream();
+        // 用于存储 SSE 事件的字符串
+        let mut sse_data = String::new();
+
