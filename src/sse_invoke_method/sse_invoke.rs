@@ -452,4 +452,6 @@ impl SSEInvokeModel {
 
         // 处理 SSE 事件
         while let Some(chunk) = response_body.next().await {
-        
+            match chunk {
+                Ok(bytes) => {
+            
