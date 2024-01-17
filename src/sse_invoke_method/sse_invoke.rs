@@ -455,4 +455,5 @@ impl SSEInvokeModel {
             match chunk {
                 Ok(bytes) => {
                     let data = String::from_utf8_lossy(&bytes);
-                    sse_dat
+                    sse_data.push_str(&data);
+                    self.ai_response_data = sse_data
