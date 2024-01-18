@@ -456,4 +456,5 @@ impl SSEInvokeModel {
                 Ok(bytes) => {
                     let data = String::from_utf8_lossy(&bytes);
                     sse_data.push_str(&data);
-                    self.ai_response_data = sse_data
+                    self.ai_response_data = sse_data.clone();
+                    //println!("{}",self.ai_response_data.clone());
