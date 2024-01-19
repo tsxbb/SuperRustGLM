@@ -460,4 +460,5 @@ impl SSEInvokeModel {
                     //println!("{}",self.ai_response_data.clone());
 
                     /*
-                    let parts: Vec<&str> = sse
+                    let parts: Vec<&str> = sse_data.split(':').collect();
+                    if parts.len() == 2 && parts[0].trim() 
