@@ -461,4 +461,5 @@ impl SSEInvokeModel {
 
                     /*
                     let parts: Vec<&str> = sse_data.split(':').collect();
-                    if parts.len() == 2 && parts[0].trim() 
+                    if parts.len() == 2 && parts[0].trim() == "data" {
+                        if let Some(json_content) = parts.get
