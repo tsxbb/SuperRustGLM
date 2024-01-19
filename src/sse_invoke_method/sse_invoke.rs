@@ -458,3 +458,6 @@ impl SSEInvokeModel {
                     sse_data.push_str(&data);
                     self.ai_response_data = sse_data.clone();
                     //println!("{}",self.ai_response_data.clone());
+
+                    /*
+                    let parts: Vec<&str> = sse
