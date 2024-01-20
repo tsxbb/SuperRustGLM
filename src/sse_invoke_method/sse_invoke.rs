@@ -465,3 +465,8 @@ impl SSEInvokeModel {
                         if let Some(json_content) = parts.get(1) {
                             //sse_queue.push_back(json_content.trim().to_string());
 
+                        }
+                    }
+                    */
+
+   
