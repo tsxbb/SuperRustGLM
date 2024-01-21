@@ -469,4 +469,5 @@ impl SSEInvokeModel {
                     }
                     */
 
-   
+                    if data.contains("data: [DONE]") {
+                  
