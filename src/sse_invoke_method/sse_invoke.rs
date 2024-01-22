@@ -473,4 +473,6 @@ impl SSEInvokeModel {
                         break;
                     }
                 }
-                Err(e) =
+                Err(e) => {
+                    return Err(format!("Error receiving SSE event: {}", e));
+   
