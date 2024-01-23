@@ -487,4 +487,5 @@ impl SSEInvokeModel {
         let mut char_queue = VecDeque::new();
         let mut queue_result = String::new();
 
-        let json_messages: Vec<&str> = response_d
+        let json_messages: Vec<&str> = response_data.lines()
+            .map(|line| line.trim_start_matches("d
