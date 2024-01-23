@@ -483,4 +483,6 @@ impl SSEInvokeModel {
     }
 
 
-    fn process_sse_message(&mut self, response_data: &str, user_message:
+    fn process_sse_message(&mut self, response_data: &str, user_message: &str) -> String {
+        let mut char_queue = VecDeque::new();
+        let mu
