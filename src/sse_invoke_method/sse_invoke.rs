@@ -483,4 +483,4 @@ impl SSEInvokeModel {
     }
 
 
- 
+    fn process_sse_message(&mut self, response_data: &str, user_message:
