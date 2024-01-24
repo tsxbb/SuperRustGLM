@@ -490,4 +490,7 @@ impl SSEInvokeModel {
         let json_messages: Vec<&str> = response_data.lines()
             .map(|line| line.trim_start_matches("data: "))
             .filter(|line| !line.is_empty())
-            .collec
+            .collect();
+
+        for json_message in json_messages {
+            if json_message.t
