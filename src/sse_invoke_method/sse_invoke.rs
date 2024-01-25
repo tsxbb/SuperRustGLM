@@ -493,4 +493,8 @@ impl SSEInvokeModel {
             .collect();
 
         for json_message in json_messages {
-            if json_message.t
+            if json_message.trim() == "[DONE]" {
+                break;
+            }
+
+     
