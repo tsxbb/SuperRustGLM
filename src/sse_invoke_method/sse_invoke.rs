@@ -497,4 +497,5 @@ impl SSEInvokeModel {
                 break;
             }
 
-     
+            if let Ok(json_element) = serde_json::from_str::<Value>(json_message) {
+                if 
