@@ -498,4 +498,5 @@ impl SSEInvokeModel {
             }
 
             if let Ok(json_element) = serde_json::from_str::<Value>(json_message) {
-                if 
+                if let Some(json_response) = json_element.as_object() {
+                    if let Some(choic
