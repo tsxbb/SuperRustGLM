@@ -501,4 +501,5 @@ impl SSEInvokeModel {
                 if let Some(json_response) = json_element.as_object() {
                     if let Some(choices) = json_response.get("choices").and_then(Value::as_array) {
                         if let Some(choice) = choices.get(0).and_then(Value::as_object) {
-                            if let Some(delta) = choice.get("delta").a
+                            if let Some(delta) = choice.get("delta").and_then(Value::as_object) {
+                                if let Some(content)
