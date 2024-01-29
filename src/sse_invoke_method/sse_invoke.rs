@@ -505,4 +505,5 @@ impl SSEInvokeModel {
                                 if let Some(content) = delta.get("content").and_then(Value::as_str) {
                                     let get_message = self.convert_unicode_emojis(content)
                                         .replace("\"", "")
-                  
+                                        .replace("\\n\\n", "\n")
+                                   
