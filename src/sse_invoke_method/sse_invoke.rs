@@ -509,4 +509,6 @@ impl SSEInvokeModel {
                                         .replace("\\nn", "\n")
                                         .replace("\\\\n", "\n")
                                         .replace("\\\\nn", "\n")
- 
+                                        .replace("\\", "");
+
+             
