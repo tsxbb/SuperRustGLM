@@ -506,4 +506,5 @@ impl SSEInvokeModel {
                                     let get_message = self.convert_unicode_emojis(content)
                                         .replace("\"", "")
                                         .replace("\\n\\n", "\n")
-                                   
+                                        .replace("\\nn", "\n")
+                                        .replace("\\\
