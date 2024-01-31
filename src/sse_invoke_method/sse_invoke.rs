@@ -512,4 +512,6 @@ impl SSEInvokeModel {
                                         .replace("\\", "");
 
                                     for c in get_message.chars() {
-                               
+                                        char_queue.push_back(c);
+                                    }
+           
