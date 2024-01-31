@@ -511,4 +511,5 @@ impl SSEInvokeModel {
                                         .replace("\\\\nn", "\n")
                                         .replace("\\", "");
 
-             
+                                    for c in get_message.chars() {
+                               
