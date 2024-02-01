@@ -514,4 +514,6 @@ impl SSEInvokeModel {
                                     for c in get_message.chars() {
                                         char_queue.push_back(c);
                                     }
-           
+                                }
+                            }
+               
