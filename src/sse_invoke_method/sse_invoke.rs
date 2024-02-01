@@ -516,4 +516,7 @@ impl SSEInvokeModel {
                                     }
                                 }
                             }
-               
+                        }
+                    }
+                } else {
+                    prin
