@@ -519,4 +519,6 @@ impl SSEInvokeModel {
                         }
                     }
                 } else {
-                    prin
+                    println!("Invalid JSON format: {:?}", json_element);
+                }
+            } else
