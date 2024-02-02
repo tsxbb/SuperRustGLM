@@ -529,4 +529,5 @@ impl SSEInvokeModel {
         queue_result.extend(char_queue);
 
 
-        if !queue_result.is_emp
+        if !queue_result.is_empty() {
+            let message_process = history_message::HistoryMessage
