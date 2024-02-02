@@ -523,4 +523,10 @@ impl SSEInvokeModel {
                 }
             } else {
                 println!("Error reading JSON: {}", json_message);
- 
+            }
+        }
+
+        queue_result.extend(char_queue);
+
+
+        if !queue_result.is_emp
