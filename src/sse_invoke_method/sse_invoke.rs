@@ -521,4 +521,6 @@ impl SSEInvokeModel {
                 } else {
                     println!("Invalid JSON format: {:?}", json_element);
                 }
-            } else
+            } else {
+                println!("Error reading JSON: {}", json_message);
+ 
