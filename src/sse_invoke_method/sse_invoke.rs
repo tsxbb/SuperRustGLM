@@ -532,4 +532,7 @@ impl SSEInvokeModel {
         if !queue_result.is_empty() {
             let message_process = history_message::HistoryMessage::new();
             message_process.add_history_to_file("user", user_message);
-       
+            message_process.add_history_to_file("assistant", &*queue_result);
+        }
+
+        que
