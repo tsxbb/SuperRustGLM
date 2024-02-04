@@ -535,4 +535,8 @@ impl SSEInvokeModel {
             message_process.add_history_to_file("assistant", &*queue_result);
         }
 
-        que
+        queue_result
+    }
+
+
+    fn convert_unicode_emojis(&self, input: &str) -> St
