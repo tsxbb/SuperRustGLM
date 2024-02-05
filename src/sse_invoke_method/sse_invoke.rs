@@ -545,4 +545,8 @@ impl SSEInvokeModel {
                 u32::from_str_radix(&caps[0][2..], 16).expect("Failed to parse Unicode escape"),
             )
                 .expect("Invalid Unicode escape");
- 
+            emoji.to_string()
+        })
+            .to_string()
+    }
+}
