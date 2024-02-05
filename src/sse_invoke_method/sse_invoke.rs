@@ -542,4 +542,4 @@ impl SSEInvokeModel {
     fn convert_unicode_emojis(&self, input: &str) -> String {
         UNICODE_REGEX.replace_all(input, |caps: &regex::Captures| {
             let emoji = char::from_u32(
-                u32::from_str
+                u32::from_str_radix(&caps[0][2..], 16).expect("Failed to parse Unicode e
