@@ -6,4 +6,5 @@ pub struct ReceiveSSEInvokeModelOnlyText {
     default_url: String,
 }
 
-impl ReceiveSSEInvokeModelOnly
+impl ReceiveSSEInvokeModelOnlyText {
+    pub async fn new(token: &str, message: &str, glm_version: &str, user_co
