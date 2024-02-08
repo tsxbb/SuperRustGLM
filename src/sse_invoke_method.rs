@@ -11,4 +11,6 @@ impl ReceiveSSEInvokeModelOnlyText {
         let default_url = "https://open.bigmodel.cn/api/paas/v4/chat/completions".trim().to_string();
 
         let mut instance = Self {
-          
+            response_sse_message: None,
+            default_url,
+        
