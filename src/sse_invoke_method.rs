@@ -7,4 +7,5 @@ pub struct ReceiveSSEInvokeModelOnlyText {
 }
 
 impl ReceiveSSEInvokeModelOnlyText {
-    pub async fn new(token: &str, message: &str, glm_version: &str, user_co
+    pub async fn new(token: &str, message: &str, glm_version: &str, user_config: &str) -> Self {
+        let default_url = "https://open.bigmodel.cn/api/paas/v4/chat/
