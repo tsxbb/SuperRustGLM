@@ -13,4 +13,6 @@ impl ReceiveSSEInvokeModelOnlyText {
         let mut instance = Self {
             response_sse_message: None,
             default_url,
-        
+        };
+
+        instance.send_request_and_wait(token, message, glm_version, user_config).await;
