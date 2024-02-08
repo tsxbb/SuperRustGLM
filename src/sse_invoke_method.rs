@@ -8,4 +8,7 @@ pub struct ReceiveSSEInvokeModelOnlyText {
 
 impl ReceiveSSEInvokeModelOnlyText {
     pub async fn new(token: &str, message: &str, glm_version: &str, user_config: &str) -> Self {
-        let default_url = "https://open.bigmodel.cn/api/paas/v4/chat/
+        let default_url = "https://open.bigmodel.cn/api/paas/v4/chat/completions".trim().to_string();
+
+        let mut instance = Self {
+          
