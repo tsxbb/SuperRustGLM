@@ -19,4 +19,6 @@ impl ReceiveSSEInvokeModelOnlyText {
         instance
     }
     pub async fn send_request_and_wait(&mut self, token: &str, message: &str, glm_version: &str, user_config: &str) {
-        
+        let default_url = self.default_url.clone();
+
+        let result = sse_invoke::SSEInvok
