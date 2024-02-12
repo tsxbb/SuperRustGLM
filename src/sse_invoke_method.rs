@@ -24,4 +24,6 @@ impl ReceiveSSEInvokeModelOnlyText {
         let result = sse_invoke::SSEInvokeModel::sse_request(token.parse().unwrap(), message.parse().unwrap(), glm_version, user_config, default_url);
 
         match result.await {
-            Ok(response)
+            Ok(response) => {
+                self.response_sse_message = Some(response);
+           
