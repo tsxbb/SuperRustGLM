@@ -26,4 +26,6 @@ impl ReceiveSSEInvokeModelOnlyText {
         match result.await {
             Ok(response) => {
                 self.response_sse_message = Some(response);
-           
+            }
+            Err(err) => {
+                eprintln!("Error: {}", err)
