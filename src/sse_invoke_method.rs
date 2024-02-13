@@ -28,4 +28,10 @@ impl ReceiveSSEInvokeModelOnlyText {
                 self.response_sse_message = Some(response);
             }
             Err(err) => {
-                eprintln!("Error: {}", err)
+                eprintln!("Error: {}", err);
+            }
+        }
+    }
+
+
+    pub fn get_response_message(&self) -> Option
