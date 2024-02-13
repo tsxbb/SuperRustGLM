@@ -34,4 +34,7 @@ impl ReceiveSSEInvokeModelOnlyText {
     }
 
 
-    pub fn get_response_message(&self) -> Option
+    pub fn get_response_message(&self) -> Option<&str> {
+        self.response_sse_message.as_deref()
+    }
+}
