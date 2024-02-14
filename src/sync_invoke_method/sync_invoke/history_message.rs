@@ -4,4 +4,9 @@ use std::path::Path;
 
 const HISTORY_FILE: &str = "chatglm_history.json";
 
-pub struct Histo
+pub struct HistoryMessage {
+    history_file_path: String,
+}
+
+impl HistoryMessage {
+    pub
