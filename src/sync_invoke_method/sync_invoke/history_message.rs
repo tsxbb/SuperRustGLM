@@ -10,4 +10,5 @@ pub struct HistoryMessage {
 
 impl HistoryMessage {
     pub fn new() -> Self {
-        let history_file_path = String::
+        let history_file_path = String::from(HISTORY_FILE);
+        Self::create_history_file_if_not_exists(&his
