@@ -9,4 +9,5 @@ pub struct HistoryMessage {
 }
 
 impl HistoryMessage {
-    pub
+    pub fn new() -> Self {
+        let history_file_path = String::
