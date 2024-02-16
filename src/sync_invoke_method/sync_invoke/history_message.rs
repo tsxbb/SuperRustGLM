@@ -16,4 +16,5 @@ impl HistoryMessage {
         HistoryMessage { history_file_path }
     }
 
-    fn cre
+    fn create_history_file_if_not_exists(file_path: &str) {
+        let path = Path::new
