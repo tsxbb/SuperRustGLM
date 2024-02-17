@@ -20,4 +20,5 @@ impl HistoryMessage {
         let path = Path::new(file_path);
 
         if !path.exists() {
-            if let Err(err) = File
+            if let Err(err) = File::create(file_path) {
+                eprintln!("Failed to create history file: {}", err)
