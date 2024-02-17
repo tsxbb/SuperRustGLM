@@ -17,4 +17,7 @@ impl HistoryMessage {
     }
 
     fn create_history_file_if_not_exists(file_path: &str) {
-        let path = Path::new
+        let path = Path::new(file_path);
+
+        if !path.exists() {
+            if let Err(err) = File
