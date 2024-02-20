@@ -30,4 +30,5 @@ impl HistoryMessage {
         let json = self.create_json(role, content);
 
         if let Ok(mut file) = OpenOptions::new().write(true).append(true).open(&self.history_file_path) {
-            if let 
+            if let Err(err) = writeln!(file, "{},", json) {
+                eprintln!("Failed to write t
