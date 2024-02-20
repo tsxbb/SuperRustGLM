@@ -29,4 +29,5 @@ impl HistoryMessage {
     pub fn add_history_to_file(&self, role: &str, content: &str) -> String {
         let json = self.create_json(role, content);
 
-        if let Ok(mut file) = OpenOptions::new().write(tr
+        if let Ok(mut file) = OpenOptions::new().write(true).append(true).open(&self.history_file_path) {
+            if let 
