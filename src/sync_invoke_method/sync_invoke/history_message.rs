@@ -38,4 +38,6 @@ impl HistoryMessage {
         }
 
         json
- 
+    }
+
+    fn create_json(&self, role: &str, content: &str) -> String
