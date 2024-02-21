@@ -34,4 +34,8 @@ impl HistoryMessage {
                 eprintln!("Failed to write to history file: {}", err);
             }
         } else {
-            epr
+            eprintln!("Failed to open history file for writing");
+        }
+
+        json
+ 
