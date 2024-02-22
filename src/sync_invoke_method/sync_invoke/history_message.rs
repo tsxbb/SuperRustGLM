@@ -43,4 +43,6 @@ impl HistoryMessage {
     fn create_json(&self, role: &str, content: &str) -> String {
         let mut historys = serde_json::Map::new();
         historys.insert(String::from("role"), serde_json::Value::String(role.to_string()));
-        historys.insert(String::from
+        historys.insert(String::from("content"), serde_json::Value::String(content.to_string()));
+
+        serde_json::to_string
