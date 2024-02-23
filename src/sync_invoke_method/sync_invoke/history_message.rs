@@ -50,4 +50,5 @@ impl HistoryMessage {
 
     pub fn load_history_from_file(&self) -> String {
         if let Ok(file) = File::open(&self.history_file_path) {
- 
+            let reader = BufReader::new(file);
+            reader.lines().fil
