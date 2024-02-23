@@ -45,4 +45,7 @@ impl HistoryMessage {
         historys.insert(String::from("role"), serde_json::Value::String(role.to_string()));
         historys.insert(String::from("content"), serde_json::Value::String(content.to_string()));
 
-        serde_json::to_string
+        serde_json::to_string(&serde_json::Value::Object(historys)).unwrap()
+    }
+
+    pub fn load_history_from_fil
