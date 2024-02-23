@@ -48,4 +48,6 @@ impl HistoryMessage {
         serde_json::to_string(&serde_json::Value::Object(historys)).unwrap()
     }
 
-    pub fn load_history_from_fil
+    pub fn load_history_from_file(&self) -> String {
+        if let Ok(file) = File::open(&self.history_file_path) {
+ 
