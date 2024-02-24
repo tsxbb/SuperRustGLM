@@ -53,4 +53,7 @@ impl HistoryMessage {
             let reader = BufReader::new(file);
             reader.lines().filter_map(Result::ok).collect()
         } else {
-            eprintl
+            eprintln!("Failed to open history file for reading");
+            String::new()
+        }
+    
