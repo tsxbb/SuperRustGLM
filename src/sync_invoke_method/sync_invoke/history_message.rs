@@ -56,4 +56,5 @@ impl HistoryMessage {
             eprintln!("Failed to open history file for reading");
             String::new()
         }
-    
+    }
+}
