@@ -220,3 +220,87 @@ impl SyncInvokeModel {
 
         Ok(Self::generate_cogview_request_body(
             &model,
+            &part2_content,
+        ).await?
+            .to_string())
+    }
+
+    async fn async_handle_sync_request(
+        user_config: &str, glm_version: &str, part2_content: String,
+    ) -> Result<String, Box<dyn Error>> {
+        let json_string = match sync_read_config(user_config, glm_version) {
+            Ok(json_string) => json_string,
+            Err(err) => return Err(Box::from(format!("Error reading config file: {}", err))),
+        };
+
+        let json_value: Value = serde_json::from_str(&json_string)
+            .expect("Failed to parse Toml to JSON");
+
+        let language_model = json_value[0]["language_model"]
+            .as_str().expect("Failed to get language_model").to_string();
+
+        let system_role = json_value[0]["system_role"]
+            .as_str().expect("Failed to get system_role").to_string();
+
+        let system_content = json_value[0]["system_content"]
+            .as_str().expect("Failed to get system_content").to_string().trim().to_string();
+
+        let user_role = json_value[0]["user_role"]
+            .as_str().expect("Failed to get user_role").to_string();
+
+        let max_token = json_value[0]["max_tokens"]
+            .as_f64().expect("Failed to get max_token");
+
+        let temp_float = json_value[0]["temp_float"]
+            .as_f64().expect("Failed to get temp_float");
+
+        let top_p_float = json_value[0]["top_p_float"]
+            .as_f64().expect("Failed to get top_p_float");
+
+        Ok(Self::generate_sync_json_request_body(
+            &language_model,
+            &system_role,
+            &system_content,
+            &user_role,
+            &part2_content,
+            max_token,
+            temp_float,
+            top_p_float,
+        ).await?
+            .to_string())
+    }
+    async fn sync_mode_checker(require_calling: String) -> bool {
+        require_calling.to_lowercase() == "cogview3"
+    }
+
+
+    async fn regex_checker(regex: &Regex, input: String) -> bool {
+        regex.is_match(&*input)
+    }
+
+    async fn json_content_post_function(&mut self, user_input: String, glm_version: &str, user_config: &str) -> String {
+        let regex_input = Regex::new(r"(.*?):(.*)").unwrap();
+        let mut part1_content = String::new();
+        let mut part2_content = String::new();
+
+        if SyncInvokeModel::regex_checker(&regex_input, user_input.clone()).await {
+            if let Some(captures_message) = regex_input.captures(&user_input) {
+                if let Some(first_part) = captures_message.get(1) {
+                    part1_content = first_part.as_str().to_string();
+                }
+                if let Some(second_part) = captures_message.get(2) {
+                    part2_content = second_part.as_str().to_string();
+                }
+            } else {
+                println!("Input does not match the pattern");
+                return String::new();
+            }
+
+            if SyncInvokeModel::sync_mode_checker(part1_content.clone()).await {
+                let _ = self.fetch_drawer.clear();
+                self.fetch_drawer = part1_content;
+                match SyncInvokeModel::cogview_handle_sync_request(user_config, part2_content.clone()).await {
+                    Ok(result) => result,
+                    Err(err) => {
+                        println!("{}", err);
+                        return String::new();
