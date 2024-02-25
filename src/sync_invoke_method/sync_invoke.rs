@@ -152,3 +152,71 @@ impl SyncInvokeModel {
     cogview request body by JSON
      */
     async fn generate_cogview_request_body(
+        model: &str,
+        user_input: &str,
+    ) -> Result<String, Box<dyn Error>> {
+        let json_request_body = json!({
+        "model": model,
+        "prompt": user_input,
+    });
+
+        let json_string = serde_json::to_string(&json_request_body)?;
+        let result = json_string.replace(r"\\\\", r"\\").replace(r"\\", r"").trim().to_string();
+
+        Ok(result)
+    }
+
+    /*
+    sync request body by JSON
+     */
+
+    async fn generate_sync_json_request_body(
+        language_model: &str,
+        system_role: &str,
+        system_content: &str,
+        user_role: &str,
+        user_input: &str,
+        max_token: f64,
+        temp_float: f64,
+        top_p_float: f64,
+    ) -> Result<String, Box<dyn Error>> {
+        let message_process = MessageProcessor::new();
+
+        let messages = json!([
+        {"role": system_role, "content": system_content},
+        {"role": user_role, "content": message_process.last_messages(user_role,user_input)}
+    ]);
+
+        let json_request_body = json!({
+        "model": language_model,
+        "messages": messages,
+        "stream": false,
+        "max_tokens": max_token,
+        "temperature": temp_float,
+        "top_p": top_p_float
+    });
+
+        let json_string = serde_json::to_string(&json_request_body)?;
+        let result = json_string.replace(r"\\\\", r"\\").replace(r"\\", r"").trim().to_string();
+
+        Ok(result)
+    }
+
+
+    /*
+     CogView_Handler Request by async
+     */
+
+    async fn cogview_handle_sync_request(user_config: &str, part2_content: String) -> Result<String, Box<dyn Error>> {
+        let json_string = match cogview_read_config(user_config, "cogview-3") {
+            Ok(json_string) => json_string,
+            Err(err) => return Err(Box::from(format!("Error reading config file: {}", err))),
+        };
+
+        let cogview_json_value: Value = serde_json::from_str(&json_string)
+            .map_err(|err| Box::new(err))?;
+
+        let model = cogview_json_value[0]["model"].as_str().expect("Failed to get cogview_model").to_string();
+
+        Ok(Self::generate_cogview_request_body(
+            &model,
