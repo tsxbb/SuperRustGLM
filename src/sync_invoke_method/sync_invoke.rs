@@ -304,3 +304,70 @@ impl SyncInvokeModel {
                     Err(err) => {
                         println!("{}", err);
                         return String::new();
+                    }
+                }
+            } else {
+                let _ = self.fetch_drawer.clear();
+                self.fetch_drawer = part1_content;
+                match SyncInvokeModel::async_handle_sync_request(user_config, glm_version, user_input.clone()).await {
+                    Ok(result) => result,
+                    Err(err) => {
+                        println!("{}", err);
+                        return String::new();
+                    }
+                }
+            }
+        } else {
+            let _ = self.fetch_drawer.clear();
+            self.fetch_drawer = "sync".to_string();
+            match SyncInvokeModel::async_handle_sync_request(user_config, glm_version, user_input.clone()).await {
+                Ok(result) => result,
+                Err(err) => {
+                    println!("{}", err);
+                    return String::new();
+                }
+            }
+        }
+    }
+
+
+    async fn sync_invoke_request_method(
+        &mut self,
+        token: String,
+        user_input: String,
+        glm_version: &str,
+        user_config: &str,
+        image_url: String,
+        default_url: String,
+    ) -> Result<String, String> {
+        let post_json = self.json_content_post_function(user_input, glm_version, user_config).await;
+        let web_url = if &*self.fetch_drawer == "cogview3".to_string() {
+            image_url
+        } else {
+            default_url
+        };
+
+        let request_result = reqwest::Client::new()
+            .post(&web_url)
+            .header("Accept", "application/json")
+            .header("Content-Type", "application/json;charset=UTF-8")
+            .header("Authorization", format!("Bearer {}", token))
+            .body(post_json)
+            .send()
+            .await
+            .map_err(|err| format!("HTTP request failure: {}", err))?;
+
+        if !request_result.status().is_success() {
+            return Err(format!("Server returned an error: {}", request_result.status()));
+        }
+
+        let response_text = request_result.text().await.map_err(|err| format!("Failed to read response text: {}", err))?;
+        self.ai_response_data = response_text.clone();
+
+        Ok(response_text)
+    }
+
+    async fn choose_task_status(&mut self, response_data: &str, user_input: &str) -> String {
+        if &*self.fetch_drawer == "cogview3".to_string() {
+            self.process_cogview_task_status(response_data).await
+        } else {
