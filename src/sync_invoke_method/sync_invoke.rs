@@ -371,3 +371,79 @@ impl SyncInvokeModel {
         if &*self.fetch_drawer == "cogview3".to_string() {
             self.process_cogview_task_status(response_data).await
         } else {
+            self.process_sync_task_status(response_data, user_input).await
+        }
+    }
+    async fn process_cogview_task_status(&mut self, response_data: &str) -> String {
+        let cogview_result = serde_json::from_str::<Value>(response_data)
+            .map_err(|e| format!("Error processing response data: {}", e))
+            .and_then(|json_response| {
+                if let Some(cogview_data) = json_response.get("data").and_then(|c| c.as_array()) {
+                    if let Some(image_url) = cogview_data.get(0).and_then(|c| c.as_object()) {
+                        if let Some(url) = image_url.get("url").and_then(|c| c.as_str()) {
+                            Ok(url.to_string())
+                        } else {
+                            Err("ImageUrl not found in message".to_string())
+                        }
+                    } else {
+                        Err("url not found in data part".to_string())
+                    }
+                } else {
+                    Err("data part not found in response".to_string())
+                }
+            });
+
+        match cogview_result {
+            Ok(content) => {
+                self.get_message = self.convert_unicode_emojis(&content);
+                self.process_message_content(&content);
+
+                self.get_message.clone()
+            }
+            Err(e) => {
+                eprintln!("{}", e);
+                String::new()
+            }
+        }
+    }
+
+    async fn process_sync_task_status(&mut self, response_data: &str, user_input: &str) -> String {
+        let result = serde_json::from_str::<Value>(response_data)
+            .map_err(|e| format!("Error processing response data: {}", e))
+            .and_then(|json_response| {
+                if let Some(choices) = json_response.get("choices").and_then(|c| c.as_array()) {
+                    if let Some(choice) = choices.get(0).and_then(|c| c.as_object()) {
+                        if let Some(message) = choice.get("message").and_then(|m| m.as_object()) {
+                            if let Some(content) = message.get("content").and_then(|c| c.as_str()) {
+                                Ok(content.to_string())
+                            } else {
+                                Err("Content not found in message".to_string())
+                            }
+                        } else {
+                            Err("Message not found in choice".to_string())
+                        }
+                    } else {
+                        Err("Choice not found in choices".to_string())
+                    }
+                } else {
+                    Err("Choices not found in response".to_string())
+                }
+            });
+
+        match result {
+            Ok(content) => {
+                self.get_message = self.convert_unicode_emojis(&content);
+                self.process_message_content(&content);
+
+                //self.get_message.(USER_ROLE, );
+                //self.get_message.add_history_to_file(ASSISTANT_ROLE, &self.get_message);
+                let message_process = history_message::HistoryMessage::new();
+                message_process.add_history_to_file("user", user_input);
+                message_process.add_history_to_file("assistant", &*self.get_message);
+
+
+                self.get_message.clone()
+            }
+            Err(e) => {
+                eprintln!("{}", e);
+                String::new()
