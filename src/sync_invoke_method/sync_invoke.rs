@@ -447,3 +447,32 @@ impl SyncInvokeModel {
             Err(e) => {
                 eprintln!("{}", e);
                 String::new()
+            }
+        }
+    }
+
+    fn process_message_content(&mut self, content: &str) -> String {
+        self.get_message = self.convert_unicode_emojis(content);
+        self.get_message = self.get_message
+            .replace("\"", "")
+            .replace("\\n\\n", "\n")
+            .replace("\\nn\\nn", "\n")
+            .replace("\\\\nn", "\n")
+            .replace("\\n", "\n")
+            .replace("\\nn", "\n")
+            .replace("\\\\", "");
+        self.get_message.clone()
+    }
+
+    fn convert_unicode_emojis(&self, input: &str) -> String {
+        let regex = regex::Regex::new(r"\\u[0-9a-fA-F]{4}").unwrap();
+        let result = regex.replace_all(input, |caps: &regex::Captures| {
+            let emoji = char::from_u32(
+                u32::from_str_radix(&caps[0][2..], 16).expect("Failed to parse Unicode escape"),
+            )
+                .expect("Invalid Unicode escape");
+            emoji.to_string()
+        });
+        result.to_string()
+    }
+}
