@@ -1,4 +1,6 @@
 mod sync_invoke;
 
 #[derive(Debug)]
-pub struct Receive
+pub struct ReceiveInvokeModelOnlyText {
+    response_sync_message: Option<String>,
+    image
