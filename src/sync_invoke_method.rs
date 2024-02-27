@@ -7,4 +7,5 @@ pub struct ReceiveInvokeModelOnlyText {
     default_url: String,
 }
 
-impl ReceiveInvokeModelOnlyTex
+impl ReceiveInvokeModelOnlyText {
+    pub async fn new(token: &str, message: &str, glm_version: &str, user_config: 
