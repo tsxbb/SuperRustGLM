@@ -8,4 +8,5 @@ pub struct ReceiveInvokeModelOnlyText {
 }
 
 impl ReceiveInvokeModelOnlyText {
-    pub async fn new(token: &str, message: &str, glm_version: &str, user_config: 
+    pub async fn new(token: &str, message: &str, glm_version: &str, user_config: &str) -> Self {
+        let image_url = "https://open.bigmodel.cn/api/pa
