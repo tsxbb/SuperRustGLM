@@ -13,4 +13,9 @@ impl ReceiveInvokeModelOnlyText {
         let default_url = "https://open.bigmodel.cn/api/paas/v4/chat/completions".trim().to_string();
 
         let mut instance = Self {
-            response_sync_message: 
+            response_sync_message: None,
+            image_url,
+            default_url,
+        };
+
+ 
