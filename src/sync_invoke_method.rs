@@ -18,4 +18,4 @@ impl ReceiveInvokeModelOnlyText {
             default_url,
         };
 
- 
+        instance.send_request_and_wait(token, message, glm_version, user_config).awai
