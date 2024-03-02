@@ -18,4 +18,7 @@ impl ReceiveInvokeModelOnlyText {
             default_url,
         };
 
-        instance.send_request_and_wait(token, message, glm_version, user_config).awai
+        instance.send_request_and_wait(token, message, glm_version, user_config).await;
+        instance
+    }
+    pub async fn send_request_and_wait(&mut self, token:
