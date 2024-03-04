@@ -23,4 +23,6 @@ impl ReceiveInvokeModelOnlyText {
     }
     pub async fn send_request_and_wait(&mut self, token: &str, message: &str, glm_version: &str, user_config: &str) {
         let image_url = self.image_url.clone();
-        let default_url = self.default_url.clon
+        let default_url = self.default_url.clone();
+
+        let result = sync_invoke::SyncInvokeModel::sync_request(token.parse(
