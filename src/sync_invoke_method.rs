@@ -21,4 +21,5 @@ impl ReceiveInvokeModelOnlyText {
         instance.send_request_and_wait(token, message, glm_version, user_config).await;
         instance
     }
-    pub async fn send_request_and_wait(&mut self, token:
+    pub async fn send_request_and_wait(&mut self, token: &str, message: &str, glm_version: &str, user_config: &str) {
+        let ima
