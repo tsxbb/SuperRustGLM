@@ -25,4 +25,8 @@ impl ReceiveInvokeModelOnlyText {
         let image_url = self.image_url.clone();
         let default_url = self.default_url.clone();
 
-        let result = sync_invoke::SyncInvokeModel::sync_request(token.parse().unwrap(), message.parse().unwrap(), glm_version, user_config, image_url, default_u
+        let result = sync_invoke::SyncInvokeModel::sync_request(token.parse().unwrap(), message.parse().unwrap(), glm_version, user_config, image_url, default_url);
+
+        match result.await {
+            Ok(response) => {
+   
