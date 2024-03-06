@@ -29,4 +29,6 @@ impl ReceiveInvokeModelOnlyText {
 
         match result.await {
             Ok(response) => {
-   
+                self.response_sync_message = Some(response);
+            }
+         
