@@ -31,4 +31,7 @@ impl ReceiveInvokeModelOnlyText {
             Ok(response) => {
                 self.response_sync_message = Some(response);
             }
-         
+            Err(err) => {
+                eprintln!("Error: {}", err);
+            }
+        }
