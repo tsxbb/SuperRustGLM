@@ -35,3 +35,8 @@ impl ReceiveInvokeModelOnlyText {
                 eprintln!("Error: {}", err);
             }
         }
+    }
+
+
+    pub fn get_response_message(&self) -> Option<&str> {
+        self.respons
