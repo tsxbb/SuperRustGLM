@@ -39,4 +39,6 @@ impl ReceiveInvokeModelOnlyText {
 
 
     pub fn get_response_message(&self) -> Option<&str> {
-        self.respons
+        self.response_sync_message.as_deref()
+    }
+}
