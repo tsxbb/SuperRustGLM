@@ -6,4 +6,6 @@
 
 ## 1. Getting Started
 
-### 1.1 Installing Rust-up executable program (Fo
+### 1.1 Installing Rust-up executable program (For Windows and Android)
+
+Follow the download links for Windows (x64
