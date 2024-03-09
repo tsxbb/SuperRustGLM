@@ -8,4 +8,4 @@
 
 ### 1.1 Installing Rust-up executable program (For Windows and Android)
 
-Follow the download links for Windows (x64
+Follow the download links for Windows (x64 and x32) and Android installations of Rust-up. If you are a Linux or MacOS user, please
