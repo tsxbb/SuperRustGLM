@@ -14,4 +14,6 @@ Follow the download links for Windows (x64 and x32) and Android installations of
 
 2. Add the SuperRustGLM library to your project.
 
-### 1.2
+### 1.2 Using NTP Time Server for Rust
+
+A guide on how to use NTP Time Server for Rust
