@@ -10,4 +10,8 @@
 
 Follow the download links for Windows (x64 and x32) and Android installations of Rust-up. If you are a Linux or MacOS user, please refer to the Installation User Manual.
 
-1. Check Rust Version aft
+1. Check Rust Version after installation using Command Line.
+
+2. Add the SuperRustGLM library to your project.
+
+### 1.2
