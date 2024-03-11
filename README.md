@@ -16,4 +16,8 @@ Follow the download links for Windows (x64 and x32) and Android installations of
 
 ### 1.2 Using NTP Time Server for Rust
 
-A guide on how to use NTP Time Server for Rust
+A guide on how to use NTP Time Server for Rust for JWT authentication.
+
+### 1.3 Saving Chat Content
+
+Commands to store us
