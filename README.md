@@ -24,4 +24,4 @@ Commands to store user chats and AI replies.
 
 ### 1.4 Importing ChatGLM TOML Configuration file
 
-Instructions on h
+Instructions on how to manually import the ChatGLM TOML Configuration file to your p
