@@ -20,4 +20,8 @@ A guide on how to use NTP Time Server for Rust for JWT authentication.
 
 ### 1.3 Saving Chat Content
 
-Commands to store us
+Commands to store user chats and AI replies.
+
+### 1.4 Importing ChatGLM TOML Configuration file
+
+Instructions on h
