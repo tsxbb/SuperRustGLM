@@ -24,4 +24,10 @@ Commands to store user chats and AI replies.
 
 ### 1.4 Importing ChatGLM TOML Configuration file
 
-Instructions on how to manually import the ChatGLM TOML Configuration file to your p
+Instructions on how to manually import the ChatGLM TOML Configuration file to your project.
+
+## 2. SDK Usage
+
+### 2.1 Call and Use the Rust Crate.io Library
+
+Gui
