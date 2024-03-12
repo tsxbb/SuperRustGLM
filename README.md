@@ -30,4 +30,4 @@ Instructions on how to manually import the ChatGLM TOML Configuration file to yo
 
 ### 2.1 Call and Use the Rust Crate.io Library
 
-Gui
+Guidance on how to use the SDK with provided examples for RustGLM versions 0.1.3 and 
