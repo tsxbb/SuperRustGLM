@@ -34,4 +34,8 @@ Guidance on how to use the SDK with provided examples for RustGLM versions 0.1.3
 
 ## 3. Command Usage
 
-Commands for SSE request, Synchronous and A
+Commands for SSE request, Synchronous and Asynchronous Requests.
+
+## 4. Conclusion
+
+Thanks for checking this out! SuperRustGL
