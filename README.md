@@ -38,4 +38,4 @@ Commands for SSE request, Synchronous and Asynchronous Requests.
 
 ## 4. Conclusion
 
-Thanks for checking this out! SuperRustGL
+Thanks for checking this out! SuperRustGLM is an open-source project dedicated to implementing the ChatGLM 
